@@ -1,0 +1,18 @@
+.error {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  border: 0.04rem solid $color-error;
+  border-radius: 0.4rem;
+  background-color: $color-error-xs;
+
+  @media screen and (max-width: 768px) {
+    width: 60%;
+  }
+
+  &__icon {
+    margin-right: 0.3rem;
+  }
+}

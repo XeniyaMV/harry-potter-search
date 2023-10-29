@@ -1,0 +1,15 @@
+.character-cards {
+  width: 95%;
+  margin-top: 2rem;
+  &__wrapper {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    background-color: $color-accent-secondary-l;
+    border: 0.05rem solid $color-accent-secondary-m;
+    border-radius: 0.4rem;
+  }
+}
