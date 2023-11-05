@@ -1,5 +1,5 @@
 import { FormEvent, ChangeEvent, useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import { SearchFormProps } from '../../../types';
 import getSearchResult from '../../../api/helpers/getSearchResult';
 import apiBase from '../../../api/constants/apiBase';
@@ -10,6 +10,7 @@ const SearchForm = (props: SearchFormProps): JSX.Element => {
   const [searchTerm, setSearchTerm] = useState(localStorage.getItem('searchTerm') || '');
   const [searchParams, setSearchParams] = useSearchParams();
   const fullClassName = getFullClassName('search-form', props.additionalClassName);
+  const navigate = useNavigate();
 
   const setNewInfo = async (searchTerm: string, page?: number): Promise<void> => {
     const result = await getSearchResult(apiBase.baseUrl, apiBase.path, searchTerm, page);
@@ -45,6 +46,7 @@ const SearchForm = (props: SearchFormProps): JSX.Element => {
     if (!props.loader) {
       if (props.setLoader) props.setLoader(true);
 
+      navigate('/?page=1');
       setSearchParams({ page: '1' });
       const search = searchTerm.trim();
       setSearchTerm(search);

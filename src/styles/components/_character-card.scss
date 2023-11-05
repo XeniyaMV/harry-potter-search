@@ -10,6 +10,9 @@
 
   color: $color-accent-primary;
   background-color: $color-primary-dark;
+  text-decoration: none;
+
+  transition: border-color 0.5s;
 
   &__image {
     max-width: 40%;
@@ -17,5 +20,13 @@
 
   &__info-name {
     text-transform: capitalize;
+  }
+
+  &_active {
+    border-color: $color-accent-secondary;
+  }
+
+  &:hover {
+    border-color: $color-accent-secondary;
   }
 }

@@ -12,6 +12,22 @@ export interface SearchResponse {
   results: CardInfoResponse[];
 }
 
+export interface FilmResponse {
+  url: string;
+  title: string;
+  characters: string[];
+  created: string;
+  edited: string;
+  episode_id: number;
+  opening_crawl: string;
+  planets: string[];
+  produser: string;
+  release_date: string;
+  species: string[];
+  starships: string[];
+  vehicles: string[];
+}
+
 export interface CardInfoResponse {
   name: string;
   height: string;
@@ -34,12 +50,16 @@ export interface CardInfoResponse {
 export interface CardInfo {
   name?: string;
   height?: string;
-  mass?: string;
-  hair_color?: string;
-  skin_color: string;
-  eye_color?: string;
   birth_year?: string;
   gender?: string;
+}
+
+export interface DetailsInfo extends CardInfo {
+  mass?: string;
+  hair_color?: string;
+  skin_color?: string;
+  eye_color?: string;
+  films?: string[];
 }
 
 export interface LogoProps extends Props {

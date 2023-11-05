@@ -12,7 +12,7 @@ const ErrorButton = (): JSX.Element => {
   }
 
   return (
-    <button className="button" onClick={(): void => handleOnClick()}>
+    <button className="button error-button" onClick={(): void => handleOnClick()}>
       See Error
     </button>
   );
