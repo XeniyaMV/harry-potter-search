@@ -1,7 +1,7 @@
 import { HeaderProps } from '../../../types';
 import getFullClassName from '../../../helpers/getFullClassName';
 import Logo from '../../../UI/logo/Logo';
-import logo from '../../../assets/logo-primary.png';
+import logo from '../../../assets/snitch.png';
 
 const Header = (props: HeaderProps): JSX.Element => {
   const fullClassName = getFullClassName('header', props.additionalClassName);

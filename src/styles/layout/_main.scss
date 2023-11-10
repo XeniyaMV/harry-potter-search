@@ -17,7 +17,7 @@
     justify-content: center;
     gap: 1rem;
 
-    @media screen and (max-width: 576px) {
+    @media screen and (max-width: 768px) {
       flex-wrap: wrap-reverse;
     }
   }
@@ -29,5 +29,17 @@
     align-items: center;
     gap: 1rem;
     text-decoration: none;
+  }
+
+  &__pagination {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+
+    @media screen and (max-width: 576px) {
+      flex-direction: column-reverse;
+    }
   }
 }

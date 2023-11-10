@@ -8,7 +8,7 @@ const CharacterCards = (props: CharacterCardsProps): JSX.Element => {
     <section className="character-cards">
       <div className="container character-cards__wrapper">
         {!props.loader ? (
-          transformResponseToCardInfo(props.cardInfos).map((item) => <CharacterCard key={item.name} cardInfo={item} />)
+          transformResponseToCardInfo(props.cardInfos).map((item) => <CharacterCard key={item.id} cardInfo={item} />)
         ) : (
           <Loader />
         )}

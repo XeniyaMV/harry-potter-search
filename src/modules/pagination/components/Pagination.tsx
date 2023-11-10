@@ -16,8 +16,8 @@ const Pagination = (props: PaginationProps): JSX.Element => {
 
   const setNewInfo = async (page: number): Promise<SearchResponse> => {
     const searchTerm = localStorage.getItem('searchTerm') || '';
-    const result = await getSearchResult(apiBase.baseUrl, apiBase.path, searchTerm, page);
-    props.setCardInfos(result.results);
+    const result = await getSearchResult(apiBase.baseUrl, apiBase.path, searchTerm, page, props.cardsPerPage);
+    props.setCardInfos(result.data);
     setSearchParams({ page: `${page}` });
     setPage(page);
     return result;
@@ -28,7 +28,7 @@ const Pagination = (props: PaginationProps): JSX.Element => {
       if (props.setLoader) props.setLoader(true);
       const result = await setNewInfo(page + 1);
       props.setHasPrev(true);
-      if (result.next === null) props.setHasNext(false);
+      if (!result.meta.pagination.next) props.setHasNext(false);
       if (props.setLoader) props.setLoader(false);
     }
   };
@@ -38,7 +38,7 @@ const Pagination = (props: PaginationProps): JSX.Element => {
       if (props.setLoader) props.setLoader(true);
       const result = await setNewInfo(page - 1);
       props.setHasNext(true);
-      if (result.previous === null) props.setHasPrev(false);
+      if (!result.meta.pagination.prev) props.setHasPrev(false);
       if (props.setLoader) props.setLoader(false);
     }
   };

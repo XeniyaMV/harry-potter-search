@@ -1,17 +1,40 @@
 import { CardInfoResponse, DetailsInfo } from '../../../types';
 
-function transformResponseToDetailsInfo(response: CardInfoResponse, films: string[]): DetailsInfo {
-  const { name, height, mass, hair_color, skin_color, eye_color, birth_year, gender } = response;
-  return {
+function transformResponseToDetailsInfo(response: CardInfoResponse): DetailsInfo {
+  const {
     name,
     height,
-    mass,
+    weight,
     hair_color,
     skin_color,
     eye_color,
-    birth_year,
+    born,
+    died,
+    marital_status,
     gender,
-    films,
+    image,
+    patronus,
+    blood_status,
+    species,
+    jobs,
+  } = response.attributes;
+  return {
+    id: response.id,
+    name,
+    height,
+    weight,
+    gender,
+    marital_status,
+    died,
+    born,
+    hair_color,
+    eye_color,
+    skin_color,
+    species,
+    patronus,
+    blood_status,
+    jobs,
+    image,
   };
 }
 
