@@ -21,7 +21,7 @@ const MainSection = (): JSX.Element => {
 
   const [cardsPerPage, setCardsPerPage] = useState(limitsPerPage.opt1.toString());
 
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const handleSelectChange = async (value: string): Promise<void> => {
     setLoader(true);
@@ -29,7 +29,10 @@ const MainSection = (): JSX.Element => {
     const search = localStorage.getItem('searchTerm');
     const page = 1;
     const result = await getSearchResult(apiBase.baseUrl, apiBase.path, search || '', page, value);
+    setSearchParams({ page: `${page}` });
     setCardInfos(result.data);
+    !result.meta.pagination.next ? setHasNext(false) : setHasNext(true);
+    !result.meta.pagination.prev ? setHasPrev(false) : setHasPrev(true);
     setLoader(false);
   };
 

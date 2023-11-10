@@ -18,9 +18,6 @@ const SearchForm = (props: SearchFormProps): JSX.Element => {
     if (props.setHasNextPage && props.setHasPrevPage) {
       !result.meta.pagination.next ? props.setHasNextPage(false) : props.setHasNextPage(true);
       !result.meta.pagination.prev ? props.setHasPrevPage(false) : props.setHasPrevPage(true);
-
-      //   result.next === null ? props.setHasNextPage(false) : props.setHasNextPage(true);
-      //   result.previous === null ? props.setHasPrevPage(false) : props.setHasPrevPage(true);
     }
   };
 
