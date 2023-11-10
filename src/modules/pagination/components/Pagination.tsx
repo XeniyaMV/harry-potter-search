@@ -16,7 +16,7 @@ const Pagination = (props: PaginationProps): JSX.Element => {
 
   const setNewInfo = async (page: number): Promise<SearchResponse> => {
     const searchTerm = localStorage.getItem('searchTerm') || '';
-    const result = await getSearchResult(apiBase.baseUrl, apiBase.path, searchTerm, page);
+    const result = await getSearchResult(apiBase.baseUrl, apiBase.path, searchTerm, page, props.cardsPerPage);
     props.setCardInfos(result.data);
     setSearchParams({ page: `${page}` });
     setPage(page);

@@ -33,21 +33,21 @@ export interface CharacterResponse {
   data: CardInfoResponse;
 }
 
-export interface FilmResponse {
-  url: string;
-  title: string;
-  characters: string[];
-  created: string;
-  edited: string;
-  episode_id: number;
-  opening_crawl: string;
-  planets: string[];
-  produser: string;
-  release_date: string;
-  species: string[];
-  starships: string[];
-  vehicles: string[];
-}
+// export interface FilmResponse {
+//   url: string;
+//   title: string;
+//   characters: string[];
+//   created: string;
+//   edited: string;
+//   episode_id: number;
+//   opening_crawl: string;
+//   planets: string[];
+//   produser: string;
+//   release_date: string;
+//   species: string[];
+//   starships: string[];
+//   vehicles: string[];
+// }
 
 export interface CharacterAttributes {
   alias_names: string[] | null;
@@ -79,22 +79,6 @@ export interface CharacterAttributes {
 }
 
 export interface CardInfoResponse {
-  // name: string;
-  // height: string;
-  // mass: string;
-  // hair_color: string;
-  // skin_color: string;
-  // eye_color: string;
-  // birth_year: string;
-  // gender: string;
-  // homeworld: string;
-  // films: string[];
-  // species: string[];
-  // vehicles: string[];
-  // starships: string[];
-  // created: string;
-  // edited: string;
-  // url: string;
   id: string | null;
   type: string | null;
   attributes: CharacterAttributes;
@@ -134,6 +118,7 @@ export interface SearchFormProps extends Props {
   submitTitle: string;
   inputPlaceholder?: string;
   loader?: boolean;
+  cardsPerPage?: string;
   setCardInfos?: (value: CardInfoResponse[]) => void;
   setLoader?: (value: boolean) => void;
   setHasNextPage?: (value: boolean) => void;
@@ -169,5 +154,13 @@ export interface PaginationProps extends Props {
   setHasNext: (value: boolean) => void;
   setHasPrev: (value: boolean) => void;
   setCardInfos: (value: CardInfoResponse[]) => void;
+  cardsPerPage?: string;
   setLoader?: (value: boolean) => void;
+}
+
+export interface SelectProps extends Props {
+  options: string[] | number[];
+  value?: string;
+  title?: string;
+  handleChangeValue?: (val: string) => void;
 }

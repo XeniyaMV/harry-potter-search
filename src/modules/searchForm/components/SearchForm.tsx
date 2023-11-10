@@ -13,7 +13,7 @@ const SearchForm = (props: SearchFormProps): JSX.Element => {
   const navigate = useNavigate();
 
   const setNewInfo = async (searchTerm: string, page?: number): Promise<void> => {
-    const result = await getSearchResult(apiBase.baseUrl, apiBase.path, searchTerm, page);
+    const result = await getSearchResult(apiBase.baseUrl, apiBase.path, searchTerm, page, props.cardsPerPage);
     if (props.setCardInfos) props.setCardInfos(result.data);
     if (props.setHasNextPage && props.setHasPrevPage) {
       !result.meta.pagination.next ? props.setHasNextPage(false) : props.setHasNextPage(true);
