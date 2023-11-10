@@ -5,6 +5,7 @@ import transformResponseToDetailsInfo from '../helpers/transformResponseToDetail
 import { DetailsInfo, Props } from '../../../types';
 import getCharacterResult from '../../../api/helpers/getCharacterResult';
 import apiBase from '../../../api/constants/apiBase';
+import cardImage from '../../../assets/card-picture.jpg';
 // import getFilmResult from '../../../api/helpers/getFilmResult';
 
 import crossIcon from '../../../assets/cross.svg';
@@ -35,6 +36,9 @@ const Details = (props: Props): JSX.Element => {
             <img className="icon" src={crossIcon} alt="close" />
           </Link>
           <h1 className="details__title">Details</h1>
+          <div className="details__image-wrapper">
+            <img className="details__image" src={details?.image || cardImage} alt="card image" />
+          </div>
           <ul className="list details__list">
             {details
               ? Object.entries(details).map(
@@ -44,7 +48,7 @@ const Details = (props: Props): JSX.Element => {
                       <li key={item[0].concat(`: ${item[1]}`)} className="list__item">
                         <span className="plain-text_highlight">{item[0].replace('_', ' ')}:</span>&nbsp;
                         {item[0] !== 'jobs' ? (
-                          item[1]
+                          item[1] || 'Unknown'
                         ) : (
                           <ul className="sublist">
                             {details.jobs?.map((job) => (

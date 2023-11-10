@@ -21,12 +21,12 @@ const CharacterCard = (props: CharacterCardProps): JSX.Element => {
               <li key={item[0].concat(`: ${item[1]}`)} className="list__item">
                 <span className="character-card__info-name plain-text_highlight">{item[0].replace('_', ' ')}:</span>
                 &nbsp;
-                {item[1]}
+                {item[1] || 'Unknown'}
               </li>
             )
         )}
       </ul>
-      <img className="character-card__image" src={props.cardInfo.image || cardImg} alt="card image" />
+      <img className="character-card__image" src={cardImg} alt="card image" />
     </Link>
   );
 };
