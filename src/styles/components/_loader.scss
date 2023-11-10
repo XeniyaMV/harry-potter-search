@@ -1,0 +1,22 @@
+.loader {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: transparent;
+  border: 0.2rem solid $color-accent-primary;
+  border-radius: 50%;
+  border-bottom-color: transparent;
+  animation-name: rotate-loader;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate-loader {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

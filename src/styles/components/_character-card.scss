@@ -1,0 +1,32 @@
+.character-card {
+  max-width: 22rem;
+  padding: 1rem 0rem 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border: 0.05rem solid $color-accent-primary;
+  border-radius: 0.4rem;
+
+  color: $color-accent-primary;
+  background-color: $color-primary-dark;
+  text-decoration: none;
+
+  transition: border-color 0.5s;
+
+  &__image {
+    max-width: 40%;
+  }
+
+  &__info-name {
+    text-transform: capitalize;
+  }
+
+  &_active {
+    border-color: $color-accent-secondary;
+  }
+
+  &:hover {
+    border-color: $color-accent-secondary;
+  }
+}

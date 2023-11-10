@@ -1,0 +1,49 @@
+.button {
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+  color: $color-primary-dark;
+  background-color: $color-accent-primary;
+  border: 0.05rem solid $color-accent-primary;
+  border-radius: 0.4rem;
+  transition:
+    background-color 0.5s,
+    color 0.5s,
+    border-color 0.5s;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $color-accent-secondary-m;
+    border-color: $color-accent-secondary-m;
+  }
+
+  &:active {
+    color: $color-accent-primary;
+    background-color: $color-accent-secondary;
+    border-color: $color-accent-primary;
+  }
+
+  &_disabled {
+    cursor: default;
+    color: $color-primary-light;
+    background-color: $color-accent-secondary;
+    border-color: $color-accent-primary;
+
+    &:hover {
+      cursor: default;
+      color: $color-primary-light;
+      background-color: $color-accent-secondary;
+      border-color: $color-accent-primary;
+    }
+
+    &:active {
+      color: $color-primary-light;
+      background-color: $color-accent-secondary;
+      border-color: $color-accent-primary;
+    }
+  }
+}

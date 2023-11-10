@@ -1,0 +1,36 @@
+.pagination {
+  width: 15%;
+  min-width: 10rem;
+  padding: 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: $color-accent-primary;
+  border-radius: 0.4rem;
+  border: 0.05rem solid $color-accent-secondary;
+  background-color: $color-accent-secondary-l;
+
+  &__button {
+    &_right {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__page-number {
+    cursor: default;
+  }
+
+  @media screen and (max-width: 992px) {
+    width: 20%;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 30%;
+  }
+
+  @media screen and (max-width: 576px) {
+    width: 35%;
+  }
+}
