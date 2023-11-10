@@ -13,7 +13,7 @@ const Select = (props: SelectProps): JSX.Element => {
       <span className="select__title">{props.title}</span>
       <select className="select__select" onChange={handleChange} value={props.value}>
         {props.options.map((option) => (
-          <option key={option} value={option}>
+          <option className="select__option" key={option} value={option}>
             {option}
           </option>
         ))}
