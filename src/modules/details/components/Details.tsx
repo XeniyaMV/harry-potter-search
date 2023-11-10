@@ -6,8 +6,6 @@ import { DetailsInfo, Props } from '../../../types';
 import getCharacterResult from '../../../api/helpers/getCharacterResult';
 import apiBase from '../../../api/constants/apiBase';
 import cardImage from '../../../assets/card-picture.jpg';
-// import getFilmResult from '../../../api/helpers/getFilmResult';
-
 import crossIcon from '../../../assets/cross.svg';
 import Loader from '../../../UI/loader/Loader';
 

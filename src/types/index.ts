@@ -33,22 +33,6 @@ export interface CharacterResponse {
   data: CardInfoResponse;
 }
 
-// export interface FilmResponse {
-//   url: string;
-//   title: string;
-//   characters: string[];
-//   created: string;
-//   edited: string;
-//   episode_id: number;
-//   opening_crawl: string;
-//   planets: string[];
-//   produser: string;
-//   release_date: string;
-//   species: string[];
-//   starships: string[];
-//   vehicles: string[];
-// }
-
 export interface CharacterAttributes {
   alias_names: string[] | null;
   animagus: string | null;
