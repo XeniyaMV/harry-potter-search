@@ -115,7 +115,6 @@ export interface CharacterCardProps extends Props {
 }
 
 export interface CharacterCardsProps extends Props {
-  cardInfos: CardInfoResponse[];
   loader?: boolean;
 }
 

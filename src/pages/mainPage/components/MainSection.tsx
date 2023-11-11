@@ -12,7 +12,7 @@ import getSearchResult from '../../../api/helpers/getSearchResult';
 import apiBase from '../../../api/constants/apiBase';
 
 const MainSection = (): JSX.Element => {
-  const { cardInfos, updateCardInfos } = useSearchFormContext();
+  const { updateCardInfos } = useSearchFormContext();
   const [loader, setLoader] = useState(false);
 
   const [hasNext, setHasNext] = useState(true);
@@ -56,7 +56,7 @@ const MainSection = (): JSX.Element => {
               className="main__search-results"
               to={`/?page=${searchParams.get('page') ? searchParams.get('page') : '1'}`}
             >
-              <CharacterCards cardInfos={cardInfos} loader={loader} />
+              <CharacterCards loader={loader} />
               <div className="main__pagination">
                 <Pagination
                   hasNext={hasNext}
