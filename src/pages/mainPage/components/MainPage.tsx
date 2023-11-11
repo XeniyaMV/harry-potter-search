@@ -1,12 +1,15 @@
+import SearchFormProvider from '../../../contexts/searchFormContext/SearchFormProvider';
 import StartScreen from '../../../modules/startScreen';
 import MainSection from './MainSection';
 
 const MainPage = (): JSX.Element => {
   return (
-    <>
-      <StartScreen />
-      <MainSection />
-    </>
+    <SearchFormProvider>
+      <>
+        <StartScreen />
+        <MainSection />
+      </>
+    </SearchFormProvider>
   );
 };
 
