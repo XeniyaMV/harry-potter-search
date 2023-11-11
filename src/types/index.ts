@@ -131,7 +131,6 @@ export interface PaginationProps extends Props {
   hasPrev: boolean;
   setHasNext: (value: boolean) => void;
   setHasPrev: (value: boolean) => void;
-  setCardInfos: (value: CardInfoResponse[]) => void;
   cardsPerPage?: string;
   setLoader?: (value: boolean) => void;
 }

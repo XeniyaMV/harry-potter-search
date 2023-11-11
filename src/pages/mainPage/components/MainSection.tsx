@@ -63,8 +63,6 @@ const MainSection = (): JSX.Element => {
                   hasPrev={hasPrev}
                   setHasNext={setHasNext}
                   setHasPrev={setHasPrev}
-                  // setCardInfos={setCardInfos}
-                  setCardInfos={updateCardInfos}
                   cardsPerPage={cardsPerPage}
                   setLoader={setLoader}
                 />
