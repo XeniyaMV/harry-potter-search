@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -86,52 +86,64 @@
 <a name='L21'></a><a href='#L21'>21</a>
 <a name='L22'></a><a href='#L22'>22</a>
 <a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import useSearchFormContext from '../../../contexts/searchFormContext/useSearchFormContext';</span>
-<span class="cstat-no" title="statement not covered" >import CharacterCard from '../../../components/characterCard/CharacterCard';</span>
-<span class="cstat-no" title="statement not covered" >import Loader from '../../../UI/loader/Loader';</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import useSearchFormContext from '../../../contexts/searchFormContext/useSearchFormContext';
+import CharacterCard from '../../../components/characterCard/CharacterCard';
+import Loader from '../../../UI/loader/Loader';
 import { CharacterCardsProps } from '../../../types';
-<span class="cstat-no" title="statement not covered" >import transformResponseToCardInfo from '../helpers/transformResponseToCardInfo';</span>
+import transformResponseToCardInfo from '../helpers/transformResponseToCardInfo';
 &nbsp;
-const CharacterCards = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(p</span>rops: CharacterCardsProps): JSX.Element =&gt; {</span>
-  const { cardInfos } = <span class="cstat-no" title="statement not covered" >useSearchFormContext();</span>
+const CharacterCards = (props: CharacterCardsProps): JSX.Element =&gt; {
+  const { cardInfos } = useSearchFormContext();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
-    &lt;section className="character-cards"&gt;
+  return (
+    &lt;section data-testid="character-cards-component" className="character-cards"&gt;
       &lt;div className="container character-cards__wrapper"&gt;
         {!props.loader ? (
-          transformResponseToCardInfo(cardInfos).map(<span class="fstat-no" title="function not covered" >(i</span>tem) =&gt; <span class="cstat-no" title="statement not covered" >&lt;CharacterCard key={item.id} c</span>ardInfo={item} /&gt;)
+          cardInfos.length !== 0 ? (
+            transformResponseToCardInfo(cardInfos).map((item) =&gt; &lt;CharacterCard key={item.id} cardInfo={item} /&gt;)
+          ) : (
+            &lt;span&gt;We couldn&amp;apos;t find any results for your request. Please try again with different keywords&lt;/span&gt;
+          )
         ) : (
-          &lt;Loader /&gt;
+<span class="branch-1 cbranch-no" title="branch not covered" >          &lt;Loader /&gt;</span>
         )}
       &lt;/div&gt;
     &lt;/section&gt;
   );
 };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >export default CharacterCards;</span>
+export default CharacterCards;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -139,7 +151,7 @@ const CharacterCards = <span class="cstat-no" title="statement not covered" ><sp
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-12T18:53:54.093Z
+                at 2023-11-12T19:46:32.205Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
