@@ -4,10 +4,10 @@ import { createMemoryHistory } from 'history';
 import userEvent from '@testing-library/user-event';
 import CharacterCard from '../components/characterCard/CharacterCard';
 import Details from '../modules/details';
-import mockGetCharacterResult from './mockGetCharacterResult';
-jest.mock('../assets/card-picture.jpg', (): void => require('./image-card-picture'));
+import mockGetCharacterResult from './__mock__/mockGetCharacterResult';
+jest.mock('../assets/card-picture.jpg', (): void => require('./__mock__/image-card-picture'));
 
-jest.mock('../api/helpers/getCharacterResult', () => require('./mockGetCharacterResult'));
+jest.mock('../api/helpers/getCharacterResult', () => require('./__mock__/mockGetCharacterResult'));
 
 describe('CharacterCard component', () => {
   const cardInfo = {

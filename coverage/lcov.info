@@ -878,7 +878,7 @@ BRF:10
 BRH:0
 end_of_record
 TN:
-SF:src\tests\image-card-picture.ts
+SF:src\tests\__mock__\image-card-picture.ts
 FNF:0
 FNH:0
 DA:1,1
@@ -888,7 +888,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\tests\mockGetCharacterResult.ts
+SF:src\tests\__mock__\mockGetCharacterResult.ts
 FN:5,(anonymous_0)
 FNF:1
 FNH:1

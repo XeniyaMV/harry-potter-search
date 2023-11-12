@@ -1,4 +1,4 @@
-import { CharacterResponse } from '../types';
+import { CharacterResponse } from '../../types';
 
 // type FunctionType = () => CharacterResponse;
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1699788686578" clover="3.2.0">
-  <project timestamp="1699788686586" name="All files">
+<coverage generated="1699815234230" clover="3.2.0">
+  <project timestamp="1699815234230" name="All files">
     <metrics statements="329" coveredstatements="56" conditionals="93" coveredconditionals="25" methods="56" coveredmethods="12" elements="478" coveredelements="93" complexity="0" loc="329" ncloc="329" packages="31" files="41" classes="41"/>
     <package name="src">
       <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -534,13 +534,13 @@
         <line num="94" count="0" type="stmt"/>
       </file>
     </package>
-    <package name="src.tests">
+    <package name="src.tests.__mock__">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="image-card-picture.ts" path="D:\Workspace\GitHub\harry-potter-search\src\tests\image-card-picture.ts">
+      <file name="image-card-picture.ts" path="D:\Workspace\GitHub\harry-potter-search\src\tests\__mock__\image-card-picture.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
       </file>
-      <file name="mockGetCharacterResult.ts" path="D:\Workspace\GitHub\harry-potter-search\src\tests\mockGetCharacterResult.ts">
+      <file name="mockGetCharacterResult.ts" path="D:\Workspace\GitHub\harry-potter-search\src\tests\__mock__\mockGetCharacterResult.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
