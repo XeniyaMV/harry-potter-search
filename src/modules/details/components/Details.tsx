@@ -27,7 +27,7 @@ const Details = (props: Props): JSX.Element => {
   }, [searchParams]);
 
   return (
-    <section className={fullClassName}>
+    <section data-testid="details-component" className={fullClassName}>
       {!loader ? (
         <div className="container details__wrapper">
           <Link className="details__close" to={`/?page=${searchParams.get('page') ? searchParams.get('page') : 1}`}>
