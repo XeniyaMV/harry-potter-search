@@ -1,7 +1,5 @@
 import { screen, render, waitForElementToBeRemoved, waitFor } from '@testing-library/react';
-// import { createMemoryHistory } from 'history';
 import userEvent from '@testing-library/user-event';
-// import { BrowserRouter, MemoryRouter, Route, Routes } from "react-router-dom";
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import Details from '../modules/details';
 
