@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1699825936421" clover="3.2.0">
-  <project timestamp="1699825936421" name="All files">
-    <metrics statements="331" coveredstatements="128" conditionals="95" coveredconditionals="40" methods="56" coveredmethods="22" elements="482" coveredelements="190" complexity="0" loc="331" ncloc="331" packages="30" files="42" classes="42"/>
+<coverage generated="1699832621043" clover="3.2.0">
+  <project timestamp="1699832621043" name="All files">
+    <metrics statements="334" coveredstatements="180" conditionals="97" coveredconditionals="49" methods="56" coveredmethods="30" elements="487" coveredelements="259" complexity="0" loc="334" ncloc="334" packages="30" files="43" classes="43"/>
     <package name="src">
       <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="main.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\main.tsx">
@@ -70,10 +70,10 @@
       <metrics statements="12" coveredstatements="4" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="1"/>
       <file name="apiBase.ts" path="D:\Workspace\GitHub\harry-potter-search\src\api\constants\apiBase.ts">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="1" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="2" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="6" count="3" type="stmt"/>
+        <line num="1" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
       </file>
       <file name="limitsPerPage.ts" path="D:\Workspace\GitHub\harry-potter-search\src\api\constants\limitsPerPage.ts">
         <metrics statements="8" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
@@ -151,9 +151,9 @@
       <metrics statements="23" coveredstatements="10" conditionals="3" coveredconditionals="0" methods="4" coveredmethods="1"/>
       <file name="SearchFormContext.ts" path="D:\Workspace\GitHub\harry-potter-search\src\contexts\searchFormContext\SearchFormContext.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
       </file>
       <file name="SearchFormProvider.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\contexts\searchFormContext\SearchFormProvider.tsx">
         <metrics statements="12" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
@@ -172,22 +172,22 @@
       </file>
       <file name="useSearchFormContext.ts" path="D:\Workspace\GitHub\harry-potter-search\src\contexts\searchFormContext\useSearchFormContext.ts">
         <metrics statements="8" coveredstatements="7" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="6" count="7" type="stmt"/>
-        <line num="7" count="7" type="cond" truecount="0" falsecount="1"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="6" count="19" type="stmt"/>
+        <line num="7" count="19" type="cond" truecount="0" falsecount="1"/>
         <line num="8" count="0" type="stmt"/>
-        <line num="10" count="7" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
+        <line num="10" count="19" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
       </file>
     </package>
     <package name="src.helpers">
       <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="getFullClassName.ts" path="D:\Workspace\GitHub\harry-potter-search\src\helpers\getFullClassName.ts">
         <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="2" count="33" type="cond" truecount="2" falsecount="0"/>
-        <line num="5" count="6" type="stmt"/>
+        <line num="2" count="38" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="7" type="stmt"/>
       </file>
     </package>
     <package name="src.modules.characterCards">
@@ -370,69 +370,71 @@
       </file>
     </package>
     <package name="src.modules.searchForm">
-      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\modules\searchForm\index.tsx">
-        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.modules.searchForm.components">
-      <metrics statements="49" coveredstatements="0" conditionals="19" coveredconditionals="0" methods="8" coveredmethods="0"/>
+      <metrics statements="51" coveredstatements="49" conditionals="21" coveredconditionals="9" methods="8" coveredmethods="8"/>
       <file name="SearchForm.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\modules\searchForm\components\SearchForm.tsx">
-        <metrics statements="40" coveredstatements="0" conditionals="17" coveredconditionals="0" methods="6" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="19" count="0" type="cond" truecount="0" falsecount="3"/>
+        <metrics statements="42" coveredstatements="40" conditionals="19" coveredconditionals="7" methods="6" coveredmethods="6"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="19" count="4" type="cond" truecount="1" falsecount="2"/>
         <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="21" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="28" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="31" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="33" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="36" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="42" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="43" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="46" count="0" type="stmt"/>
-        <line num="47" count="0" type="stmt"/>
-        <line num="48" count="0" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
-        <line num="52" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="56" count="0" type="stmt"/>
-        <line num="57" count="0" type="stmt"/>
-        <line num="70" count="0" type="stmt"/>
+        <line num="25" count="5" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
+        <line num="27" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="28" count="3" type="cond" truecount="0" falsecount="1"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="31" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="32" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="33" count="3" type="stmt"/>
+        <line num="34" count="3" type="cond" truecount="0" falsecount="1"/>
+        <line num="37" count="3" type="stmt"/>
+        <line num="41" count="5" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="44" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="53" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="57" count="5" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
+        <line num="71" count="1" type="stmt"/>
       </file>
       <file name="SearchInput.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\modules\searchForm\components\SearchInput.tsx">
-        <metrics statements="9" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
+        <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="14" count="7" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.modules.startScreen">
@@ -527,7 +529,7 @@
       </file>
     </package>
     <package name="src.tests.__mock__">
-      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="image-card-picture.ts" path="D:\Workspace\GitHub\harry-potter-search\src\tests\__mock__\image-card-picture.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="3" type="stmt"/>
@@ -535,6 +537,10 @@
       <file name="image-pagination.ts" path="D:\Workspace\GitHub\harry-potter-search\src\tests\__mock__\image-pagination.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="image-search.ts" path="D:\Workspace\GitHub\harry-potter-search\src\tests\__mock__\image-search.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
       </file>
       <file name="mockGetCharacterResult.ts" path="D:\Workspace\GitHub\harry-potter-search\src\tests\__mock__\mockGetCharacterResult.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -544,9 +550,9 @@
       </file>
       <file name="mockGetSearchResult.ts" path="D:\Workspace\GitHub\harry-potter-search\src\tests\__mock__\mockGetSearchResult.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="60" count="1" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="62" count="2" type="stmt"/>
       </file>
     </package>
   </project>

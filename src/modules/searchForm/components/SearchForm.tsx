@@ -28,8 +28,9 @@ const SearchForm = (props: SearchFormProps): JSX.Element => {
         if (props.setLoader) props.setLoader(true);
 
         const pageQuaryParam = searchParams.get('page');
-        await setNewInfo(searchTerm, pageQuaryParam ? +pageQuaryParam : 1);
-
+        const search = localStorage.getItem('searchTerm') || '';
+        await setNewInfo(search, pageQuaryParam ? +pageQuaryParam : 1);
+        updateSearchTerm(search);
         if (props.setLoader) props.setLoader(false);
       }
     };
@@ -54,7 +55,11 @@ const SearchForm = (props: SearchFormProps): JSX.Element => {
   };
 
   return (
-    <form className={fullClassName} onSubmit={(event): Promise<void> => handleSubmit(event)}>
+    <form
+      data-testid="search-form-component"
+      className={fullClassName}
+      onSubmit={(event): Promise<void> => handleSubmit(event)}
+    >
       <SearchInput inputPlaceholder={props.inputPlaceholder} />
       <button
         className={`button search-form__submit ${props.loader ? 'button_disabled' : ''}`}
