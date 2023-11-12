@@ -30,7 +30,11 @@ const Details = (props: Props): JSX.Element => {
     <section data-testid="details-component" className={fullClassName}>
       {!loader ? (
         <div className="container details__wrapper">
-          <Link className="details__close" to={`/?page=${searchParams.get('page') ? searchParams.get('page') : 1}`}>
+          <Link
+            data-testid="close"
+            className="details__close"
+            to={`/?page=${searchParams.get('page') ? searchParams.get('page') : 1}`}
+          >
             <img className="icon" src={crossIcon} alt="close" />
           </Link>
           <h1 className="details__title">Details</h1>
