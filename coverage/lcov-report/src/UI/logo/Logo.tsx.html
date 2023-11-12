@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -80,37 +80,37 @@
 <a name='L15'></a><a href='#L15'>15</a>
 <a name='L16'></a><a href='#L16'>16</a>
 <a name='L17'></a><a href='#L17'>17</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { LogoProps } from '../../types';
-<span class="cstat-no" title="statement not covered" >import getFullClassName from '../../helpers/getFullClassName';</span>
-<span class="cstat-no" title="statement not covered" >import { Link } from 'react-router-dom';</span>
+import getFullClassName from '../../helpers/getFullClassName';
+import { Link } from 'react-router-dom';
 &nbsp;
-const Logo = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(p</span>rops: LogoProps): JSX.Element =&gt; {</span>
-  const fullClassName = <span class="cstat-no" title="statement not covered" >getFullClassName('logo', props.additionalClassName);</span>
+const Logo = (props: LogoProps): JSX.Element =&gt; {
+  const fullClassName = getFullClassName('logo', props.additionalClassName);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
-    &lt;Link className={fullClassName} to={`${props.link}`}&gt;
+  return (
+    &lt;Link data-testid="logo-component" className={fullClassName} to={`${props.link}`}&gt;
       &lt;h1 className="logo__title"&gt;{props.title}&lt;/h1&gt;
-      {props.iconUrl &amp;&amp; &lt;img className="logo__icon" src={`${props.iconUrl}`} alt="logo icon" /&gt;}
+      {props.iconUrl &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;img className="logo__icon" src={`${props.iconUrl}`} alt="logo icon" /&gt;}</span>
     &lt;/Link&gt;
   );
 };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >export default Logo;</span>
+export default Logo;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -118,7 +118,7 @@ const Logo = <span class="cstat-no" title="statement not covered" ><span class="
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-12T19:46:32.205Z
+                at 2023-11-12T20:00:28.840Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
