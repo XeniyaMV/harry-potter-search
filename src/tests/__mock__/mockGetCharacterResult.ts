@@ -1,7 +1,5 @@
 import { CharacterResponse } from '../../types';
 
-// type FunctionType = () => CharacterResponse;
-
 const mockGetCharacterResult = jest.fn(function (): CharacterResponse {
   return {
     data: {
