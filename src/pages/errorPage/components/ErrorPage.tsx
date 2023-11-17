@@ -7,7 +7,7 @@ const ErrorPage = (props: Props): JSX.Element => {
   const fullClassName = getFullClassName('error-page', props.additionalClassName);
 
   return (
-    <main className={fullClassName}>
+    <main data-testid="error-page-component" className={fullClassName}>
       <section className="error-section">
         <ErrorMessage additionalClassName="error-section__message" errorMessage="Oops... Something went wrong" />
         <Link className="button error-section__reload" to="/">
