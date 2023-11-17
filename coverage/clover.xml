@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1700250567637" clover="3.2.0">
-  <project timestamp="1700250567637" name="All files">
-    <metrics statements="343" coveredstatements="211" conditionals="97" coveredconditionals="51" methods="57" coveredmethods="36" elements="497" coveredelements="298" complexity="0" loc="343" ncloc="343" packages="31" files="47" classes="47"/>
+<coverage generated="1700251212807" clover="3.2.0">
+  <project timestamp="1700251212807" name="All files">
+    <metrics statements="344" coveredstatements="218" conditionals="97" coveredconditionals="51" methods="57" coveredmethods="37" elements="498" coveredelements="306" complexity="0" loc="344" ncloc="344" packages="31" files="48" classes="48"/>
     <package name="src">
       <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="main.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\main.tsx">
@@ -439,21 +439,21 @@
       </file>
     </package>
     <package name="src.modules.startScreen">
-      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\modules\startScreen\index.tsx">
-        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.modules.startScreen.components">
-      <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="StartScreen.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\modules\startScreen\components\StartScreen.tsx">
-        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.pages.errorPage.components">
@@ -541,7 +541,7 @@
       </file>
     </package>
     <package name="src.tests.__mock__">
-      <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="image-alarm-light.ts" path="D:\Workspace\GitHub\harry-potter-search\src\tests\__mock__\image-alarm-light.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -565,6 +565,10 @@
       <file name="image-search.ts" path="D:\Workspace\GitHub\harry-potter-search\src\tests\__mock__\image-search.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
+      </file>
+      <file name="image-start-screen.ts" path="D:\Workspace\GitHub\harry-potter-search\src\tests\__mock__\image-start-screen.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
       </file>
       <file name="mockGetCharacterResult.ts" path="D:\Workspace\GitHub\harry-potter-search\src\tests\__mock__\mockGetCharacterResult.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>

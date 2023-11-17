@@ -2,7 +2,7 @@ import startImg from '../../../assets/hogwarts.png';
 
 const StartScreen = (): JSX.Element => {
   return (
-    <section className="start-screen">
+    <section data-testid="start-screen-component" className="start-screen">
       <div className="container start-screen__wrapper">
         <div className="start-screen__about">
           <h2 className="start-screen__title">
