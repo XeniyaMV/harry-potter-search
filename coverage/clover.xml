@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1700207239868" clover="3.2.0">
-  <project timestamp="1700207239868" name="All files">
-    <metrics statements="341" coveredstatements="194" conditionals="97" coveredconditionals="51" methods="57" coveredmethods="34" elements="495" coveredelements="279" complexity="0" loc="341" ncloc="341" packages="31" files="45" classes="45"/>
+<coverage generated="1700249248696" clover="3.2.0">
+  <project timestamp="1700249248697" name="All files">
+    <metrics statements="342" coveredstatements="201" conditionals="97" coveredconditionals="51" methods="57" coveredmethods="35" elements="496" coveredelements="287" complexity="0" loc="342" ncloc="342" packages="31" files="46" classes="46"/>
     <package name="src">
       <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="main.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\main.tsx">
@@ -18,15 +18,15 @@
       </file>
     </package>
     <package name="src.UI.errorMessage">
-      <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="ErrorMessage.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\UI\errorMessage\ErrorMessage.tsx">
-        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.UI.loader">
@@ -187,8 +187,8 @@
       <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="getFullClassName.ts" path="D:\Workspace\GitHub\harry-potter-search\src\helpers\getFullClassName.ts">
         <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="2" count="43" type="cond" truecount="2" falsecount="0"/>
-        <line num="5" count="8" type="stmt"/>
+        <line num="2" count="45" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="9" type="stmt"/>
       </file>
     </package>
     <package name="src.modules.characterCards">
@@ -541,7 +541,11 @@
       </file>
     </package>
     <package name="src.tests.__mock__">
-      <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="image-alarm-light.ts" path="D:\Workspace\GitHub\harry-potter-search\src\tests\__mock__\image-alarm-light.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
       <file name="image-card-picture.ts" path="D:\Workspace\GitHub\harry-potter-search\src\tests\__mock__\image-card-picture.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="3" type="stmt"/>
