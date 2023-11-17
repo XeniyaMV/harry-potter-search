@@ -3,7 +3,7 @@ import footPrints from '../../../assets/foot-prints.svg';
 
 const Page404 = (): JSX.Element => {
   return (
-    <section className="page-404">
+    <section data-testid="page-404" className="page-404">
       <div className="container page-404__wrapper">
         <div className="page-404__message">
           <h1 className="page-404__title">404</h1>

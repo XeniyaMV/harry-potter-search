@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1699832792375" clover="3.2.0">
-  <project timestamp="1699832792375" name="All files">
-    <metrics statements="334" coveredstatements="180" conditionals="97" coveredconditionals="49" methods="56" coveredmethods="30" elements="487" coveredelements="259" complexity="0" loc="334" ncloc="334" packages="30" files="43" classes="43"/>
+<coverage generated="1700203633429" clover="3.2.0">
+  <project timestamp="1700203633430" name="All files">
+    <metrics statements="341" coveredstatements="186" conditionals="97" coveredconditionals="49" methods="57" coveredmethods="31" elements="495" coveredelements="266" complexity="0" loc="341" ncloc="341" packages="31" files="45" classes="45"/>
     <package name="src">
       <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="main.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\main.tsx">
@@ -108,18 +108,19 @@
       </file>
     </package>
     <package name="src.app">
-      <metrics statements="16" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="17" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="App.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\app\App.tsx">
-        <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <metrics statements="10" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
       </file>
       <file name="RootLayout.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\app\RootLayout.tsx">
         <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
@@ -528,11 +529,26 @@
         <line num="94" count="0" type="stmt"/>
       </file>
     </package>
+    <package name="src.pages.page404.components">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Page404.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\pages\page404\components\Page404.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="src.tests.__mock__">
-      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="image-card-picture.ts" path="D:\Workspace\GitHub\harry-potter-search\src\tests\__mock__\image-card-picture.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="3" type="stmt"/>
+      </file>
+      <file name="image-page-404.ts" path="D:\Workspace\GitHub\harry-potter-search\src\tests\__mock__\image-page-404.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
       </file>
       <file name="image-pagination.ts" path="D:\Workspace\GitHub\harry-potter-search\src\tests\__mock__\image-pagination.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
