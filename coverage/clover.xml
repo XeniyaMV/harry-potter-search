@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1700203633429" clover="3.2.0">
-  <project timestamp="1700203633430" name="All files">
-    <metrics statements="341" coveredstatements="186" conditionals="97" coveredconditionals="49" methods="57" coveredmethods="31" elements="495" coveredelements="266" complexity="0" loc="341" ncloc="341" packages="31" files="45" classes="45"/>
+<coverage generated="1700205212119" clover="3.2.0">
+  <project timestamp="1700205212120" name="All files">
+    <metrics statements="341" coveredstatements="186" conditionals="97" coveredconditionals="50" methods="57" coveredmethods="31" elements="495" coveredelements="267" complexity="0" loc="341" ncloc="341" packages="31" files="45" classes="45"/>
     <package name="src">
       <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="main.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\main.tsx">
@@ -41,14 +41,14 @@
       </file>
     </package>
     <package name="src.UI.logo">
-      <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="Logo.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\UI\logo\Logo.tsx">
-        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
       </file>
     </package>
@@ -187,7 +187,7 @@
       <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="getFullClassName.ts" path="D:\Workspace\GitHub\harry-potter-search\src\helpers\getFullClassName.ts">
         <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="2" count="38" type="cond" truecount="2" falsecount="0"/>
+        <line num="2" count="40" type="cond" truecount="2" falsecount="0"/>
         <line num="5" count="7" type="stmt"/>
       </file>
     </package>
