@@ -9,7 +9,7 @@ const Select = (props: SelectProps): JSX.Element => {
   };
 
   return (
-    <div className={fullClassName}>
+    <div data-testid="select-component" className={fullClassName}>
       <span className="select__title">{props.title}</span>
       <select className="select__select" onChange={handleChange} value={props.value}>
         {props.options.map((option) => (

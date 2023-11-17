@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1700205212119" clover="3.2.0">
-  <project timestamp="1700205212120" name="All files">
-    <metrics statements="341" coveredstatements="186" conditionals="97" coveredconditionals="50" methods="57" coveredmethods="31" elements="495" coveredelements="267" complexity="0" loc="341" ncloc="341" packages="31" files="45" classes="45"/>
+<coverage generated="1700207239868" clover="3.2.0">
+  <project timestamp="1700207239868" name="All files">
+    <metrics statements="341" coveredstatements="194" conditionals="97" coveredconditionals="51" methods="57" coveredmethods="34" elements="495" coveredelements="279" complexity="0" loc="341" ncloc="341" packages="31" files="45" classes="45"/>
     <package name="src">
       <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="main.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\main.tsx">
@@ -53,17 +53,17 @@
       </file>
     </package>
     <package name="src.UI.select">
-      <metrics statements="8" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="8" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="3"/>
       <file name="Select.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\UI\select\Select.tsx">
-        <metrics statements="8" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
+        <metrics statements="8" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="16" count="9" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.api.constants">
@@ -187,8 +187,8 @@
       <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="getFullClassName.ts" path="D:\Workspace\GitHub\harry-potter-search\src\helpers\getFullClassName.ts">
         <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="2" count="40" type="cond" truecount="2" falsecount="0"/>
-        <line num="5" count="7" type="stmt"/>
+        <line num="2" count="43" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="8" type="stmt"/>
       </file>
     </package>
     <package name="src.modules.characterCards">
