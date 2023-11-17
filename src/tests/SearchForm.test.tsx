@@ -89,7 +89,6 @@ describe('SearchForm', () => {
         </SearchFormContext.Provider>
       </MemoryRouter>
     );
-    console.log(newcontextValue.searchTerm);
 
     await waitFor(() => fireEvent.submit(searchFormElement));
 

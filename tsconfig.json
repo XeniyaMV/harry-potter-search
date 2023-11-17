@@ -26,6 +26,6 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
   },
-  "include": ["vite.config.ts", ".eslintrc.cjs", "src"],
+  "include": ["vite.config.ts", ".eslintrc.cjs", "src", "support"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

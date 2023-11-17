@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1699832621043" clover="3.2.0">
-  <project timestamp="1699832621043" name="All files">
+<coverage generated="1699832792375" clover="3.2.0">
+  <project timestamp="1699832792375" name="All files">
     <metrics statements="334" coveredstatements="180" conditionals="97" coveredconditionals="49" methods="56" coveredmethods="30" elements="487" coveredelements="259" complexity="0" loc="334" ncloc="334" packages="30" files="43" classes="43"/>
     <package name="src">
       <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -421,8 +421,8 @@
         <line num="51" count="1" type="stmt"/>
         <line num="53" count="1" type="cond" truecount="0" falsecount="1"/>
         <line num="57" count="5" type="stmt"/>
-        <line num="58" count="1" type="stmt"/>
-        <line num="71" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="75" count="1" type="stmt"/>
       </file>
       <file name="SearchInput.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\modules\searchForm\components\SearchInput.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>

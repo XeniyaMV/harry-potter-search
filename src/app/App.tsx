@@ -3,6 +3,7 @@ import RootLayout from './RootLayout';
 import MainPage from '../pages/mainPage/components/MainPage';
 import ErrorPage from '../pages/errorPage/components/ErrorPage';
 import Details from '../modules/details';
+import Page404 from '../pages/page404/components/Page404';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -10,6 +11,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<MainPage />}>
         <Route path="details" element={<Details />} />
       </Route>
+      <Route path="*" element={<Page404 />} />
     </Route>
   )
 );
