@@ -1,0 +1,87 @@
+.page-404 {
+  background-color: $color-primary-dark;
+  &__wrapper {
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__message {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.5rem;
+    text-align: center;
+    font-family: Martel, sans-serif;
+  }
+
+  &__title,
+  &__subtitle {
+    color: $color-accent-primary;
+    font-family: Martel, sans-serif;
+  }
+
+  &__title {
+    font-size: 5rem;
+    font-weight: 600;
+  }
+
+  &__subtitle {
+    font-size: 2rem;
+  }
+
+  &__foot-prints {
+    height: 11.5rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+
+  &__foot-print {
+    width: 3rem;
+    transform: rotate(180deg);
+    opacity: 0;
+    transition: opacity 2s;
+    animation-name: show-prints;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+
+    @keyframes show-prints {
+      0% {
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+        transform: rotate(180deg) translate(-1rem, -2rem);
+      }
+      20% {
+        opacity: 0;
+      }
+      30% {
+        opacity: 1;
+        transform: rotate(180deg) translate(1rem, -4rem);
+      }
+      40% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+        transform: rotate(180deg) translate(-1rem, -6rem);
+      }
+      60% {
+        opacity: 0;
+      }
+      70% {
+        opacity: 1;
+        transform: rotate(180deg) translate(1rem, -8rem);
+      }
+      80% {
+        opacity: 0;
+      }
+    }
+  }
+}

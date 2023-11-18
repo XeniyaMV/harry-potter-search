@@ -5,15 +5,15 @@ import cardImg from '../../assets/card-picture.jpg';
 
 const CharacterCard = (props: CharacterCardProps): JSX.Element => {
   const fullClassName = getFullClassName('character-card', props.additionalClassName);
-
   const [searchParams] = useSearchParams();
 
   return (
     <Link
+      data-testid="character-card"
       className={fullClassName}
       to={`/details/?page=${searchParams.get('page') ? searchParams.get('page') : 1}&details=${props.cardInfo.id}`}
     >
-      <ul className="list character-card__info">
+      <ul data-testid="card-info-list" className="list character-card__info">
         {Object.entries(props.cardInfo).map(
           (item) =>
             item[0] !== 'id' &&
@@ -26,7 +26,7 @@ const CharacterCard = (props: CharacterCardProps): JSX.Element => {
             )
         )}
       </ul>
-      <img className="character-card__image" src={cardImg} alt="card image" />
+      <img data-testid="card-image" className="character-card__image" src={cardImg} alt="card image" />
     </Link>
   );
 };

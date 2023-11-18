@@ -12,6 +12,11 @@ async function getSearchResult(
     limit || limitsPerPage.opt1
   }&page[number]=${page || '1'}`;
   const resp = await fetch(fullPath);
+
+  if (!resp.ok) {
+    throw new Error(`Failed to fetch search data. Status: ${resp.status}`);
+  }
+
   const result: SearchResponse = await resp.json();
   return result;
 }

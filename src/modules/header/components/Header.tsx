@@ -7,7 +7,7 @@ const Header = (props: HeaderProps): JSX.Element => {
   const fullClassName = getFullClassName('header', props.additionalClassName);
 
   return (
-    <header className={fullClassName}>
+    <header data-testid="header-component" className={fullClassName}>
       <div className="container header__wrapper">
         <Logo additionalClassName="header__logo" link="/" iconUrl={logo} />
       </div>

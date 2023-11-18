@@ -1,5 +1,3 @@
-import { ChangeEvent } from 'react';
-
 export interface Props {
   additionalClassName?: string;
   children?: JSX.Element;
@@ -103,15 +101,12 @@ export interface SearchFormProps extends Props {
   inputPlaceholder?: string;
   loader?: boolean;
   cardsPerPage?: string;
-  setCardInfos?: (value: CardInfoResponse[]) => void;
   setLoader?: (value: boolean) => void;
   setHasNextPage?: (value: boolean) => void;
   setHasPrevPage?: (value: boolean) => void;
 }
 
 export interface SearchInputProps extends Props {
-  value: string;
-  setValue: (event: ChangeEvent<HTMLInputElement>) => void;
   inputPlaceholder?: string;
 }
 
@@ -120,7 +115,6 @@ export interface CharacterCardProps extends Props {
 }
 
 export interface CharacterCardsProps extends Props {
-  cardInfos: CardInfoResponse[];
   loader?: boolean;
 }
 
@@ -137,7 +131,6 @@ export interface PaginationProps extends Props {
   hasPrev: boolean;
   setHasNext: (value: boolean) => void;
   setHasPrev: (value: boolean) => void;
-  setCardInfos: (value: CardInfoResponse[]) => void;
   cardsPerPage?: string;
   setLoader?: (value: boolean) => void;
 }
@@ -147,4 +140,11 @@ export interface SelectProps extends Props {
   value?: string;
   title?: string;
   handleChangeValue?: (val: string) => void;
+}
+
+export interface SearchFormContextType {
+  searchTerm: string;
+  updateSearchTerm: (value: string) => void;
+  cardInfos: CardInfoResponse[];
+  updateCardInfos: (value: CardInfoResponse[]) => void;
 }
