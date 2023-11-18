@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1700278196538" clover="3.2.0">
-  <project timestamp="1700278196538" name="All files">
-    <metrics statements="351" coveredstatements="324" conditionals="99" coveredconditionals="85" methods="57" coveredmethods="54" elements="507" coveredelements="463" complexity="0" loc="351" ncloc="351" packages="31" files="48" classes="48"/>
+<coverage generated="1700283554358" clover="3.2.0">
+  <project timestamp="1700283554358" name="All files">
+    <metrics statements="351" coveredstatements="341" conditionals="99" coveredconditionals="85" methods="57" coveredmethods="56" elements="507" coveredelements="482" complexity="0" loc="351" ncloc="351" packages="31" files="48" classes="48"/>
     <package name="src">
       <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="main.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\main.tsx">
@@ -112,29 +112,29 @@
       </file>
     </package>
     <package name="src.app">
-      <metrics statements="17" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="App.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\app\App.tsx">
-        <metrics statements="10" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
+        <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
       </file>
       <file name="RootLayout.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\app\RootLayout.tsx">
-        <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.components.characterCard">
@@ -191,8 +191,8 @@
       <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="getFullClassName.ts" path="D:\Workspace\GitHub\harry-potter-search\src\helpers\getFullClassName.ts">
         <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="2" count="110" type="cond" truecount="2" falsecount="0"/>
-        <line num="5" count="14" type="stmt"/>
+        <line num="2" count="111" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="15" type="stmt"/>
       </file>
     </package>
     <package name="src.modules.characterCards">

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -86,16 +86,14 @@
 <a name='L21'></a><a href='#L21'>21</a>
 <a name='L22'></a><a href='#L22'>22</a>
 <a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L24'></a><a href='#L24'>24</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -104,19 +102,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';</span>
-<span class="cstat-no" title="statement not covered" >import RootLayout from './RootLayout';</span>
-<span class="cstat-no" title="statement not covered" >import MainPage from '../pages/mainPage/components/MainPage';</span>
-<span class="cstat-no" title="statement not covered" >import ErrorPage from '../pages/errorPage/components/ErrorPage';</span>
-<span class="cstat-no" title="statement not covered" >import Details from '../modules/details';</span>
-<span class="cstat-no" title="statement not covered" >import Page404 from '../pages/page404/components/Page404';</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import RootLayout from './RootLayout';
+import MainPage from '../pages/mainPage/components/MainPage';
+import ErrorPage from '../pages/errorPage/components/ErrorPage';
+import Details from '../modules/details';
+import Page404 from '../pages/page404/components/Page404';
 &nbsp;
-const router = <span class="cstat-no" title="statement not covered" >createBrowserRouter(</span>
+const router = createBrowserRouter(
   createRoutesFromElements(
     &lt;Route path="/" element={&lt;RootLayout /&gt;} errorElement={&lt;ErrorPage /&gt;}&gt;
       &lt;Route path="/" element={&lt;MainPage /&gt;}&gt;
@@ -127,11 +127,11 @@ const router = <span class="cstat-no" title="statement not covered" >createBrows
   )
 );
 &nbsp;
-const App = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(): JSX.Element =</span>&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  return &lt;RouterProvider router={router} /&gt;;</span>
+const App = (): JSX.Element =&gt; {
+  return &lt;RouterProvider router={router} /&gt;;
 };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >export default App;</span>
+export default App;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -139,7 +139,7 @@ const App = <span class="cstat-no" title="statement not covered" ><span class="f
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-18T03:29:56.395Z
+                at 2023-11-18T04:59:14.220Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
