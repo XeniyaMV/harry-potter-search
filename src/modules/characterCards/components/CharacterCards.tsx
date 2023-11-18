@@ -8,10 +8,14 @@ const CharacterCards = (props: CharacterCardsProps): JSX.Element => {
   const { cardInfos } = useSearchFormContext();
 
   return (
-    <section className="character-cards">
+    <section data-testid="character-cards-component" className="character-cards">
       <div className="container character-cards__wrapper">
         {!props.loader ? (
-          transformResponseToCardInfo(cardInfos).map((item) => <CharacterCard key={item.id} cardInfo={item} />)
+          cardInfos.length !== 0 ? (
+            transformResponseToCardInfo(cardInfos).map((item) => <CharacterCard key={item.id} cardInfo={item} />)
+          ) : (
+            <span>We couldn&apos;t find any results for your request. Please try again with different keywords</span>
+          )
         ) : (
           <Loader />
         )}

@@ -12,9 +12,10 @@ const SearchInput = (props: SearchInputProps): JSX.Element => {
   };
 
   return (
-    <div className="search-form__input">
+    <div data-testid="search-input-component" className="search-form__input">
       <img className="search-form__icon" src={searchIcon} alt="search icon" />
       <input
+        data-testid="input-text"
         type="text"
         className="search-form__text-field"
         placeholder={props.inputPlaceholder || 'Enter'}

@@ -46,8 +46,9 @@ const Pagination = (props: PaginationProps): JSX.Element => {
   };
 
   return (
-    <div className={fullClassName}>
+    <div data-testid="pagination-component" className={fullClassName}>
       <button
+        data-testid="pagination-prev"
         className={`button pagination__button ${!props.hasPrev ? 'button_disabled' : ''}`}
         onClick={handleClickPrev}
         disabled={!props.hasPrev}
@@ -56,6 +57,7 @@ const Pagination = (props: PaginationProps): JSX.Element => {
       </button>
       <span className="pagination__page-number">{page}</span>
       <button
+        data-testid="pagination-next"
         className={`button pagination__button pagination__button_right ${!props.hasNext ? 'button_disabled' : ''}`}
         onClick={handleClickNext}
         disabled={!props.hasNext}

@@ -18,19 +18,30 @@ const Details = (props: Props): JSX.Element => {
   useEffect((): void => {
     const fetchData = async (): Promise<void> => {
       setLoader(true);
-      const search = searchParams.get('details');
-      const result = await getCharacterResult(apiBase.baseUrl, apiBase.path, search || '');
-      setDetails(transformResponseToDetailsInfo(result.data));
-      setLoader(false);
+      try {
+        const search = searchParams.get('details');
+        const result = await getCharacterResult(apiBase.baseUrl, apiBase.path, search || '');
+        setDetails(transformResponseToDetailsInfo(result.data));
+      } catch {
+        // eslint-disable-next-line no-console
+        console.error('Error fetching character details');
+        setDetails(undefined);
+      } finally {
+        setLoader(false);
+      }
     };
     fetchData();
   }, [searchParams]);
 
   return (
-    <section className={fullClassName}>
+    <section data-testid="details-component" className={fullClassName}>
       {!loader ? (
         <div className="container details__wrapper">
-          <Link className="details__close" to={`/?page=${searchParams.get('page') ? searchParams.get('page') : 1}`}>
+          <Link
+            data-testid="close"
+            className="details__close"
+            to={`/?page=${searchParams.get('page') ? searchParams.get('page') : 1}`}
+          >
             <img className="icon" src={crossIcon} alt="close" />
           </Link>
           <h1 className="details__title">Details</h1>
