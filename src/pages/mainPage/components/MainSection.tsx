@@ -36,7 +36,7 @@ const MainSection = (): JSX.Element => {
   };
 
   return (
-    <main className="main">
+    <main data-testid="main-section-component" className="main">
       <div className="container main__wrapper">
         <ErrorButton />
         <section className="search">
