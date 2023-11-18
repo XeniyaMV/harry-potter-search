@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1700283554358" clover="3.2.0">
-  <project timestamp="1700283554358" name="All files">
-    <metrics statements="351" coveredstatements="341" conditionals="99" coveredconditionals="85" methods="57" coveredmethods="56" elements="507" coveredelements="482" complexity="0" loc="351" ncloc="351" packages="31" files="48" classes="48"/>
+<coverage generated="1700340784574" clover="3.2.0">
+  <project timestamp="1700340784574" name="All files">
+    <metrics statements="351" coveredstatements="343" conditionals="99" coveredconditionals="97" methods="57" coveredmethods="56" elements="507" coveredelements="496" complexity="0" loc="351" ncloc="351" packages="31" files="48" classes="48"/>
     <package name="src">
       <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="main.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\main.tsx">
@@ -35,8 +35,8 @@
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="2" count="6" type="stmt"/>
         <line num="4" count="6" type="stmt"/>
-        <line num="5" count="12" type="stmt"/>
-        <line num="6" count="12" type="stmt"/>
+        <line num="5" count="13" type="stmt"/>
+        <line num="6" count="13" type="stmt"/>
         <line num="9" count="6" type="stmt"/>
       </file>
     </package>
@@ -88,7 +88,7 @@
       </file>
     </package>
     <package name="src.api.helpers">
-      <metrics statements="15" coveredstatements="15" conditionals="8" coveredconditionals="5" methods="2" coveredmethods="2"/>
+      <metrics statements="15" coveredstatements="15" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
       <file name="getCharacterResult.ts" path="D:\Workspace\GitHub\harry-potter-search\src\api\helpers\getCharacterResult.ts">
         <metrics statements="7" coveredstatements="7" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="4" count="2" type="stmt"/>
@@ -100,14 +100,14 @@
         <line num="15" count="1" type="stmt"/>
       </file>
       <file name="getSearchResult.ts" path="D:\Workspace\GitHub\harry-potter-search\src\api\helpers\getSearchResult.ts">
-        <metrics statements="8" coveredstatements="8" conditionals="7" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <metrics statements="8" coveredstatements="8" conditionals="7" coveredconditionals="7" methods="1" coveredmethods="1"/>
         <line num="2" count="1" type="stmt"/>
-        <line num="11" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="14" count="2" type="stmt"/>
-        <line num="16" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="16" count="3" type="cond" truecount="1" falsecount="0"/>
         <line num="17" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
       </file>
     </package>
@@ -180,10 +180,10 @@
         <line num="1" count="6" type="stmt"/>
         <line num="2" count="6" type="stmt"/>
         <line num="5" count="6" type="stmt"/>
-        <line num="6" count="84" type="stmt"/>
-        <line num="7" count="82" type="cond" truecount="0" falsecount="1"/>
+        <line num="6" count="88" type="stmt"/>
+        <line num="7" count="86" type="cond" truecount="0" falsecount="1"/>
         <line num="8" count="0" type="stmt"/>
-        <line num="10" count="82" type="stmt"/>
+        <line num="10" count="86" type="stmt"/>
         <line num="13" count="6" type="stmt"/>
       </file>
     </package>
@@ -191,7 +191,7 @@
       <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="getFullClassName.ts" path="D:\Workspace\GitHub\harry-potter-search\src\helpers\getFullClassName.ts">
         <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="2" count="111" type="cond" truecount="2" falsecount="0"/>
+        <line num="2" count="117" type="cond" truecount="2" falsecount="0"/>
         <line num="5" count="15" type="stmt"/>
       </file>
     </package>
@@ -204,16 +204,16 @@
       </file>
     </package>
     <package name="src.modules.characterCards.components">
-      <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+      <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
       <file name="CharacterCards.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\modules\characterCards\components\CharacterCards.tsx">
-        <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
         <line num="1" count="3" type="stmt"/>
         <line num="2" count="3" type="stmt"/>
         <line num="3" count="3" type="stmt"/>
         <line num="5" count="3" type="stmt"/>
         <line num="7" count="3" type="stmt"/>
-        <line num="8" count="13" type="stmt"/>
-        <line num="10" count="12" type="stmt"/>
+        <line num="8" count="14" type="stmt"/>
+        <line num="10" count="13" type="stmt"/>
         <line num="15" count="4" type="stmt"/>
         <line num="27" count="3" type="stmt"/>
       </file>
@@ -238,9 +238,9 @@
       </file>
     </package>
     <package name="src.modules.details.components">
-      <metrics statements="29" coveredstatements="26" conditionals="17" coveredconditionals="17" methods="5" coveredmethods="4"/>
+      <metrics statements="29" coveredstatements="28" conditionals="17" coveredconditionals="17" methods="5" coveredmethods="4"/>
       <file name="Details.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\modules\details\components\Details.tsx">
-        <metrics statements="29" coveredstatements="26" conditionals="17" coveredconditionals="17" methods="5" coveredmethods="4"/>
+        <metrics statements="29" coveredstatements="28" conditionals="17" coveredconditionals="17" methods="5" coveredmethods="4"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
@@ -251,22 +251,22 @@
         <line num="9" count="2" type="stmt"/>
         <line num="10" count="2" type="stmt"/>
         <line num="12" count="2" type="stmt"/>
-        <line num="13" count="15" type="stmt"/>
-        <line num="14" count="15" type="stmt"/>
-        <line num="15" count="15" type="stmt"/>
-        <line num="16" count="15" type="stmt"/>
-        <line num="18" count="15" type="stmt"/>
-        <line num="19" count="5" type="stmt"/>
-        <line num="20" count="5" type="stmt"/>
-        <line num="21" count="5" type="stmt"/>
-        <line num="22" count="5" type="stmt"/>
-        <line num="23" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="17" type="stmt"/>
+        <line num="14" count="17" type="stmt"/>
+        <line num="15" count="17" type="stmt"/>
+        <line num="16" count="17" type="stmt"/>
+        <line num="18" count="17" type="stmt"/>
+        <line num="19" count="6" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
+        <line num="21" count="6" type="stmt"/>
+        <line num="22" count="6" type="stmt"/>
+        <line num="23" count="6" type="cond" truecount="2" falsecount="0"/>
         <line num="24" count="5" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="30" count="5" type="stmt"/>
-        <line num="33" count="5" type="stmt"/>
-        <line num="36" count="15" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="30" count="6" type="stmt"/>
+        <line num="33" count="6" type="stmt"/>
+        <line num="36" count="17" type="stmt"/>
         <line num="55" count="80" type="cond" truecount="3" falsecount="0"/>
         <line num="64" count="0" type="stmt"/>
         <line num="85" count="2" type="stmt"/>
@@ -336,9 +336,9 @@
       </file>
     </package>
     <package name="src.modules.pagination.components">
-      <metrics statements="36" coveredstatements="36" conditionals="16" coveredconditionals="10" methods="4" coveredmethods="4"/>
+      <metrics statements="36" coveredstatements="36" conditionals="16" coveredconditionals="16" methods="4" coveredmethods="4"/>
       <file name="Pagination.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\modules\pagination\components\Pagination.tsx">
-        <metrics statements="36" coveredstatements="36" conditionals="16" coveredconditionals="10" methods="4" coveredmethods="4"/>
+        <metrics statements="36" coveredstatements="36" conditionals="16" coveredconditionals="16" methods="4" coveredmethods="4"/>
         <line num="1" count="3" type="stmt"/>
         <line num="2" count="3" type="stmt"/>
         <line num="3" count="3" type="stmt"/>
@@ -347,33 +347,33 @@
         <line num="7" count="3" type="stmt"/>
         <line num="9" count="3" type="stmt"/>
         <line num="11" count="3" type="stmt"/>
-        <line num="12" count="13" type="stmt"/>
-        <line num="13" count="13" type="stmt"/>
-        <line num="14" count="13" type="stmt"/>
-        <line num="15" count="13" type="cond" truecount="2" falsecount="0"/>
-        <line num="17" count="13" type="stmt"/>
-        <line num="19" count="13" type="stmt"/>
-        <line num="20" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="21" count="2" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
-        <line num="23" count="2" type="stmt"/>
-        <line num="24" count="2" type="stmt"/>
-        <line num="25" count="2" type="stmt"/>
-        <line num="28" count="13" type="stmt"/>
-        <line num="29" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="30" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="33" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="34" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="38" count="13" type="stmt"/>
-        <line num="39" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="40" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="41" count="1" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
-        <line num="43" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="44" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="48" count="13" type="stmt"/>
+        <line num="12" count="16" type="stmt"/>
+        <line num="13" count="16" type="stmt"/>
+        <line num="14" count="16" type="stmt"/>
+        <line num="15" count="16" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="16" type="stmt"/>
+        <line num="19" count="16" type="stmt"/>
+        <line num="20" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="4" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="28" count="16" type="stmt"/>
+        <line num="29" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="30" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="34" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="38" count="16" type="stmt"/>
+        <line num="39" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="40" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="43" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="44" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="48" count="16" type="stmt"/>
         <line num="71" count="3" type="stmt"/>
       </file>
     </package>
@@ -386,9 +386,9 @@
       </file>
     </package>
     <package name="src.modules.searchForm.components">
-      <metrics statements="51" coveredstatements="51" conditionals="21" coveredconditionals="18" methods="8" coveredmethods="8"/>
+      <metrics statements="51" coveredstatements="51" conditionals="21" coveredconditionals="20" methods="8" coveredmethods="8"/>
       <file name="SearchForm.tsx" path="D:\Workspace\GitHub\harry-potter-search\src\modules\searchForm\components\SearchForm.tsx">
-        <metrics statements="42" coveredstatements="42" conditionals="19" coveredconditionals="16" methods="6" coveredmethods="6"/>
+        <metrics statements="42" coveredstatements="42" conditionals="19" coveredconditionals="18" methods="6" coveredmethods="6"/>
         <line num="1" count="3" type="stmt"/>
         <line num="2" count="3" type="stmt"/>
         <line num="3" count="3" type="stmt"/>
@@ -420,14 +420,14 @@
         <line num="41" count="20" type="stmt"/>
         <line num="42" count="1" type="stmt"/>
         <line num="43" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="44" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="44" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="46" count="1" type="stmt"/>
         <line num="47" count="1" type="stmt"/>
         <line num="48" count="1" type="stmt"/>
         <line num="49" count="1" type="stmt"/>
         <line num="50" count="1" type="stmt"/>
         <line num="51" count="1" type="stmt"/>
-        <line num="53" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="53" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="57" count="20" type="stmt"/>
         <line num="61" count="1" type="stmt"/>
         <line num="75" count="3" type="stmt"/>

@@ -1,6 +1,7 @@
 import { enableFetchMocks } from 'jest-fetch-mock';
 import getSearchResult from '../api/helpers/getSearchResult';
 import { SearchResponse } from '../types';
+import limitsPerPage from '../api/constants/limitsPerPage';
 
 enableFetchMocks();
 
@@ -98,5 +99,75 @@ describe('getSearchResult', () => {
     expect(fetchMock).toHaveBeenCalledWith(
       `${baseUrl}${path}?filter[name_cont]=${search}&page[size]=${limit}&page[number]=${page}`
     );
+  });
+
+  it('fetches data correctly with optional parameters', async () => {
+    const baseUrl = 'https://example.com/api/';
+    const path = 'characters/';
+
+    const mockSearchResponse: SearchResponse = {
+      data: [
+        {
+          id: '1',
+          type: 'character',
+          attributes: {
+            alias_names: ['Harry'],
+            animagus: null,
+            blood_status: 'pure',
+            boggart: 'dementor',
+            born: '31 july',
+            died: null,
+            eye_color: 'green',
+            family_members: null,
+            marital_status: 'married',
+            gender: 'male',
+            hair_color: 'brown',
+            height: '6',
+            house: 'Grifindor',
+            image: null,
+            jobs: null,
+            name: 'Harry James Potter',
+            nationality: null,
+            patronus: 'dear',
+            romances: null,
+            skin_color: null,
+            slug: null,
+            species: 'Human',
+            titles: null,
+            wand: null,
+            weight: '170',
+            wiki: null,
+          },
+        },
+      ],
+      links: {
+        current: '/2',
+        first: '/1',
+        last: '/3',
+        self: '/1',
+        next: '/3',
+        prev: '/1',
+      },
+      meta: {
+        copyright: '',
+        generated_at: '',
+        pagination: {
+          current: 2,
+          first: 1,
+          last: 3,
+          records: 5,
+          next: 3,
+          prev: 1,
+        },
+      },
+    };
+
+    fetchMock.mockResponseOnce(JSON.stringify(mockSearchResponse), { status: 200 });
+    const result = await getSearchResult(baseUrl, path);
+
+    expect(fetchMock).toHaveBeenCalledWith(
+      `${baseUrl}${path}?filter[name_cont]=${''}&page[size]=${limitsPerPage.opt1}&page[number]=${1}`
+    );
+    expect(result).toEqual(mockSearchResponse);
   });
 });

@@ -2,6 +2,7 @@ import { screen, render, waitForElementToBeRemoved, waitFor } from '@testing-lib
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import Details from '../modules/details';
+import mockGetCharacterResult from './__mock__/mockGetCharacterResult';
 
 jest.mock('../assets/card-picture.jpg', (): void => require('./__mock__/image-card-picture'));
 jest.mock('../api/helpers/getCharacterResult', () => require('./__mock__/mockGetCharacterResult'));
@@ -67,5 +68,18 @@ describe('Details', () => {
     const closeElement = await screen.findByTestId('close');
     await waitFor(() => userEvent.click(closeElement));
     expect(screen.queryByTestId('details-component')).toBeNull();
+  });
+
+  it('displays message when data not found', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    mockGetCharacterResult.mockImplementation(() => {
+      throw Error('Error');
+    });
+    render(
+      <MemoryRouter initialEntries={['/details/?page=1&details=1']}>
+        <Details />
+      </MemoryRouter>
+    );
+    expect(screen.getByText(/Not Found/i)).toBeInTheDocument();
   });
 });

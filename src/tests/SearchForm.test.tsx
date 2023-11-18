@@ -64,11 +64,12 @@ describe('SearchForm', () => {
 
   it('saves entered value to local storage when clicking the Search button', async () => {
     const localStorageSetItemMock = jest.spyOn(Storage.prototype, 'setItem');
+    const setLoader = jest.fn();
 
     const { rerender } = render(
       <MemoryRouter initialEntries={['/']}>
         <SearchFormContext.Provider value={contextValue}>
-          <SearchForm submitTitle="search" />
+          <SearchForm submitTitle="search" setLoader={setLoader} />
         </SearchFormContext.Provider>
       </MemoryRouter>
     );
@@ -85,13 +86,14 @@ describe('SearchForm', () => {
     rerender(
       <MemoryRouter initialEntries={['/']}>
         <SearchFormContext.Provider value={newcontextValue}>
-          <SearchForm submitTitle="search" />
+          <SearchForm submitTitle="search" setLoader={setLoader} />
         </SearchFormContext.Provider>
       </MemoryRouter>
     );
 
     await waitFor(() => fireEvent.submit(searchFormElement));
 
+    expect(setLoader).toHaveBeenCalledTimes(4);
     expect(localStorageSetItemMock).toHaveBeenCalledWith('searchTerm', 'testValue');
   });
 

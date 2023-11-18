@@ -1,3 +1,4 @@
+// import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import CharacterCards from '../modules/characterCards';
@@ -85,5 +86,16 @@ describe('CharacterCards component', () => {
     );
     expect(screen.queryByTestId('character-card')).toBeNull();
     expect(screen.getByText("We couldn't find any results for your request. Please try again with different keywords"));
+  });
+
+  it('displays a loading indicator while fetching data', async () => {
+    render(
+      <MemoryRouter initialEntries={['/']}>
+        <SearchFormContext.Provider value={contextValue}>
+          <CharacterCards loader={true} />
+        </SearchFormContext.Provider>
+      </MemoryRouter>
+    );
+    expect(screen.getByTestId('loader')).toBeInTheDocument();
   });
 });
