@@ -1,14 +1,18 @@
 import { ChangeEvent } from 'react';
-import useSearchFormContext from '../../../contexts/searchFormContext/useSearchFormContext';
 import { SearchInputProps } from '../../../types';
 import searchIcon from '../../../assets/search.svg';
 
+//--REDUX--
+import { useAppDispatch, useAppSelector } from '../../../app/hooks';
+import { searchTermUpdated } from '../../../helpers/reducers/searchTermSlice';
+
 const SearchInput = (props: SearchInputProps): JSX.Element => {
-  const { searchTerm, updateSearchTerm } = useSearchFormContext();
+  const searchTerm = useAppSelector((state) => state.searchTerm.value);
+  const dispatch = useAppDispatch();
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
     event.preventDefault();
-    updateSearchTerm(event.target.value);
+    dispatch(searchTermUpdated(event.target.value));
   };
 
   return (

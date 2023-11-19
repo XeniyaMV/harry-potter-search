@@ -8,7 +8,10 @@ import getFullClassName from '../../../helpers/getFullClassName';
 import { PaginationProps, SearchResponse } from '../../../types';
 import arrowLeft from '../../../assets/left-double-arrow.svg';
 
+import { useAppSelector } from '../../../app/hooks';
+
 const Pagination = (props: PaginationProps): JSX.Element => {
+  const searchTerm = useAppSelector((state) => state.searchTerm.value);
   const { updateCardInfos } = useSearchFormContext();
   const [searchParams, setSearchParams] = useSearchParams();
   const pageQuaryParam = searchParams.get('page');
@@ -17,7 +20,6 @@ const Pagination = (props: PaginationProps): JSX.Element => {
   const fullClassName = getFullClassName('pagination', props.additionalClassName);
 
   const setNewInfo = async (page: number): Promise<SearchResponse> => {
-    const searchTerm = localStorage.getItem('searchTerm') || '';
     const result = await getSearchResult(apiBase.baseUrl, apiBase.path, searchTerm, page, props.cardsPerPage);
     updateCardInfos(result.data);
     setSearchParams({ page: `${page}` });

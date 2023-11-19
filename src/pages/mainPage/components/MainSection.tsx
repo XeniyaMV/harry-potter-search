@@ -11,6 +11,8 @@ import limitsPerPage from '../../../api/constants/limitsPerPage';
 import getSearchResult from '../../../api/helpers/getSearchResult';
 import apiBase from '../../../api/constants/apiBase';
 
+import { useAppSelector } from '../../../app/hooks';
+
 const MainSection = (): JSX.Element => {
   const { updateCardInfos } = useSearchFormContext();
   const [loader, setLoader] = useState(false);
@@ -21,13 +23,13 @@ const MainSection = (): JSX.Element => {
   const [cardsPerPage, setCardsPerPage] = useState(limitsPerPage.opt1.toString());
 
   const [searchParams, setSearchParams] = useSearchParams();
+  const searchTerm = useAppSelector((state) => state.searchTerm.value);
 
   const handleSelectChange = async (value: string): Promise<void> => {
     setLoader(true);
     setCardsPerPage(value);
-    const search = localStorage.getItem('searchTerm');
     const page = 1;
-    const result = await getSearchResult(apiBase.baseUrl, apiBase.path, search || '', page, value);
+    const result = await getSearchResult(apiBase.baseUrl, apiBase.path, searchTerm, page, value);
     setSearchParams({ page: `${page}` });
     updateCardInfos(result.data);
     !result.meta.pagination.next ? setHasNext(false) : setHasNext(true);

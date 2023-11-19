@@ -6,6 +6,8 @@ import Pagination from '../modules/pagination';
 import SearchFormContext from '../contexts/searchFormContext/SearchFormContext';
 import { SearchFormContextType } from '../types';
 import mockGetSearchResult from './__mock__/mockGetSearchResult';
+import { Provider } from 'react-redux';
+import { store } from '../app/store.ts';
 
 jest.mock('../api/helpers/getSearchResult', () => require('./__mock__/mockGetSearchResult'));
 
@@ -13,7 +15,7 @@ jest.mock('../assets/left-double-arrow.svg', (): void => require('./__mock__/ima
 
 const contextValue: SearchFormContextType = {
   searchTerm: 'harry',
-  updateSearchTerm: () => {},
+  updateSearchTerm: jest.fn(),
   cardInfos: [
     {
       id: '1',
@@ -48,7 +50,7 @@ const contextValue: SearchFormContextType = {
       },
     },
   ],
-  updateCardInfos: () => {},
+  updateCardInfos: jest.fn(),
 };
 
 describe('Pagination', () => {
@@ -66,9 +68,11 @@ describe('Pagination', () => {
     };
     render(
       <MemoryRouter initialEntries={['/']}>
-        <SearchFormContext.Provider value={contextValue}>
-          <Pagination {...props} />
-        </SearchFormContext.Provider>
+        <Provider store={store}>
+          <SearchFormContext.Provider value={contextValue}>
+            <Pagination {...props} />
+          </SearchFormContext.Provider>
+        </Provider>
       </MemoryRouter>
     );
     const paginationElement = await screen.findByTestId('pagination-component');
@@ -87,9 +91,11 @@ describe('Pagination', () => {
     };
     render(
       <Router location={history.location} navigator={history}>
-        <SearchFormContext.Provider value={contextValue}>
-          <Pagination {...props} />
-        </SearchFormContext.Provider>
+        <Provider store={store}>
+          <SearchFormContext.Provider value={contextValue}>
+            <Pagination {...props} />
+          </SearchFormContext.Provider>
+        </Provider>
       </Router>
     );
     const paginationPrev = await screen.findByTestId('pagination-prev');
@@ -166,11 +172,14 @@ describe('Pagination', () => {
 
     render(
       <Router location={history.location} navigator={history}>
-        <SearchFormContext.Provider value={contextValue}>
-          <Pagination {...props} />
-        </SearchFormContext.Provider>
+        <Provider store={store}>
+          <SearchFormContext.Provider value={contextValue}>
+            <Pagination {...props} />
+          </SearchFormContext.Provider>
+        </Provider>
       </Router>
     );
+
     const paginationPrev = await screen.findByTestId('pagination-prev');
     await waitFor(() => userEvent.click(paginationPrev));
     expect(props.setHasPrev).toHaveBeenCalledWith(false);

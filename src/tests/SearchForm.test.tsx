@@ -4,6 +4,9 @@ import SearchFormContext from '../contexts/searchFormContext/SearchFormContext';
 import { SearchFormContextType } from '../types';
 import { MemoryRouter } from 'react-router-dom';
 
+import { Provider } from 'react-redux';
+import { store } from '../app/store.ts';
+
 jest.mock('../api/helpers/getSearchResult', () => require('./__mock__/mockGetSearchResult'));
 
 jest.mock('../assets/search.svg', (): void => require('./__mock__/image-search'));
@@ -52,9 +55,11 @@ describe('SearchForm', () => {
   it('renders SearchForm component', async () => {
     render(
       <MemoryRouter initialEntries={['/']}>
-        <SearchFormContext.Provider value={contextValue}>
-          <SearchForm submitTitle="search" />
-        </SearchFormContext.Provider>
+        <Provider store={store}>
+          <SearchFormContext.Provider value={contextValue}>
+            <SearchForm submitTitle="search" />
+          </SearchFormContext.Provider>
+        </Provider>
       </MemoryRouter>
     );
     const searchFormElement = await screen.findByTestId('search-form-component');
@@ -64,13 +69,16 @@ describe('SearchForm', () => {
 
   it('saves entered value to local storage when clicking the Search button', async () => {
     const localStorageSetItemMock = jest.spyOn(Storage.prototype, 'setItem');
+    const dispatchSpy = jest.spyOn(store, 'dispatch');
     const setLoader = jest.fn();
 
     const { rerender } = render(
       <MemoryRouter initialEntries={['/']}>
-        <SearchFormContext.Provider value={contextValue}>
-          <SearchForm submitTitle="search" setLoader={setLoader} />
-        </SearchFormContext.Provider>
+        <Provider store={store}>
+          <SearchFormContext.Provider value={contextValue}>
+            <SearchForm submitTitle="search" setLoader={setLoader} />
+          </SearchFormContext.Provider>
+        </Provider>
       </MemoryRouter>
     );
 
@@ -80,14 +88,20 @@ describe('SearchForm', () => {
         target: { value: 'testValue' },
       })
     );
-    expect(contextValue.updateSearchTerm).toHaveBeenCalledWith('testValue');
+    // expect(contextValue.updateSearchTerm).toHaveBeenCalledWith('testValue');
+    expect(dispatchSpy).toHaveBeenCalledWith({
+      type: 'searchTerm/updated',
+      payload: 'testValue',
+    });
     const newcontextValue = { ...contextValue };
     newcontextValue.searchTerm = 'testValue';
     rerender(
       <MemoryRouter initialEntries={['/']}>
-        <SearchFormContext.Provider value={newcontextValue}>
-          <SearchForm submitTitle="search" setLoader={setLoader} />
-        </SearchFormContext.Provider>
+        <Provider store={store}>
+          <SearchFormContext.Provider value={contextValue}>
+            <SearchForm submitTitle="search" setLoader={setLoader} />
+          </SearchFormContext.Provider>
+        </Provider>
       </MemoryRouter>
     );
 
@@ -102,9 +116,11 @@ describe('SearchForm', () => {
 
     render(
       <MemoryRouter initialEntries={['/']}>
-        <SearchFormContext.Provider value={contextValue}>
-          <SearchForm submitTitle="search" />
-        </SearchFormContext.Provider>
+        <Provider store={store}>
+          <SearchFormContext.Provider value={contextValue}>
+            <SearchForm submitTitle="search" />
+          </SearchFormContext.Provider>
+        </Provider>
       </MemoryRouter>
     );
 

@@ -7,8 +7,15 @@ import getFullClassName from '../../../helpers/getFullClassName';
 import SearchInput from './SearchInput';
 import { SearchFormProps } from '../../../types';
 
+//--REDUX--
+import { useAppSelector, useAppDispatch } from '../../../app/hooks';
+import { searchTermUpdated } from '../../../helpers/reducers/searchTermSlice';
+
 const SearchForm = (props: SearchFormProps): JSX.Element => {
-  const { searchTerm, updateSearchTerm, updateCardInfos } = useSearchFormContext();
+  const { updateCardInfos } = useSearchFormContext();
+  const searchTerm = useAppSelector((state) => state.searchTerm.value);
+  const dispatch = useAppDispatch();
+
   const [searchParams, setSearchParams] = useSearchParams();
   const fullClassName = getFullClassName('search-form', props.additionalClassName);
   const navigate = useNavigate();
@@ -30,7 +37,7 @@ const SearchForm = (props: SearchFormProps): JSX.Element => {
         const pageQuaryParam = searchParams.get('page');
         const search = localStorage.getItem('searchTerm') || '';
         await setNewInfo(search, pageQuaryParam ? +pageQuaryParam : 1);
-        updateSearchTerm(search);
+        dispatch(searchTermUpdated(search));
         if (props.setLoader) props.setLoader(false);
       }
     };
@@ -46,7 +53,7 @@ const SearchForm = (props: SearchFormProps): JSX.Element => {
       navigate('/?page=1');
       setSearchParams({ page: '1' });
       const search = searchTerm.trim();
-      updateSearchTerm(search);
+      dispatch(searchTermUpdated(search));
       await setNewInfo(search);
       localStorage.setItem('searchTerm', search);
 

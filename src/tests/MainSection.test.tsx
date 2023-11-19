@@ -4,6 +4,8 @@ import { SearchFormContextType, SearchResponse } from '../types';
 import SearchFormContext from '../contexts/searchFormContext/SearchFormContext';
 import { MemoryRouter } from 'react-router-dom';
 import mockGetSearchResult from './__mock__/mockGetSearchResult';
+import { Provider } from 'react-redux';
+import { store } from '../app/store.ts';
 
 jest.mock('../api/helpers/getSearchResult', () => require('./__mock__/mockGetSearchResult'));
 jest.mock('../assets/search.svg', (): void => require('./__mock__/image-search'));
@@ -20,9 +22,11 @@ describe('MainSection', () => {
   it('renders MainSection component', async () => {
     render(
       <MemoryRouter>
-        <SearchFormContext.Provider value={contextValue}>
-          <MainSection />
-        </SearchFormContext.Provider>
+        <Provider store={store}>
+          <SearchFormContext.Provider value={contextValue}>
+            <MainSection />
+          </SearchFormContext.Provider>
+        </Provider>
       </MemoryRouter>
     );
 
@@ -94,9 +98,11 @@ describe('MainSection', () => {
 
     render(
       <MemoryRouter>
-        <SearchFormContext.Provider value={contextValue}>
-          <MainSection />
-        </SearchFormContext.Provider>
+        <Provider store={store}>
+          <SearchFormContext.Provider value={contextValue}>
+            <MainSection />
+          </SearchFormContext.Provider>
+        </Provider>
       </MemoryRouter>
     );
 
