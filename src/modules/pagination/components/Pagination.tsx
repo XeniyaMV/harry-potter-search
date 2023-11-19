@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import useSearchFormContext from '../../../contexts/searchFormContext/useSearchFormContext';
+// import useSearchFormContext from '../../../contexts/searchFormContext/useSearchFormContext';
 
 import getSearchResult from '../../../api/helpers/getSearchResult';
 import apiBase from '../../../api/constants/apiBase';
@@ -8,11 +8,13 @@ import getFullClassName from '../../../helpers/getFullClassName';
 import { PaginationProps, SearchResponse } from '../../../types';
 import arrowLeft from '../../../assets/left-double-arrow.svg';
 
-import { useAppSelector } from '../../../app/hooks';
+import { useAppSelector, useAppDispatch } from '../../../app/hooks';
+import { cardsPerPageUpdated } from '../../../helpers/reducers/cardsPerPageSlice';
 
 const Pagination = (props: PaginationProps): JSX.Element => {
   const searchTerm = useAppSelector((state) => state.searchTerm.value);
-  const { updateCardInfos } = useSearchFormContext();
+  // const { updateCardInfos } = useSearchFormContext();
+  const dispatch = useAppDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
   const pageQuaryParam = searchParams.get('page');
   const [page, setPage] = useState(pageQuaryParam ? +pageQuaryParam : 1);
@@ -21,7 +23,8 @@ const Pagination = (props: PaginationProps): JSX.Element => {
 
   const setNewInfo = async (page: number): Promise<SearchResponse> => {
     const result = await getSearchResult(apiBase.baseUrl, apiBase.path, searchTerm, page, props.cardsPerPage);
-    updateCardInfos(result.data);
+    // updateCardInfos(result.data);
+    dispatch(cardsPerPageUpdated(result.data));
     setSearchParams({ page: `${page}` });
     setPage(page);
     return result;

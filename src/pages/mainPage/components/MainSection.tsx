@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link, Outlet, useSearchParams } from 'react-router-dom';
-import useSearchFormContext from '../../../contexts/searchFormContext/useSearchFormContext';
 import SearchForm from '../../../modules/searchForm';
 import CharacterCards from '../../../modules/characterCards';
 import Pagination from '../../../modules/pagination';
@@ -11,10 +10,11 @@ import limitsPerPage from '../../../api/constants/limitsPerPage';
 import getSearchResult from '../../../api/helpers/getSearchResult';
 import apiBase from '../../../api/constants/apiBase';
 
-import { useAppSelector } from '../../../app/hooks';
+import { useAppSelector, useAppDispatch } from '../../../app/hooks';
+import { cardsPerPageUpdated } from '../../../helpers/reducers/cardsPerPageSlice';
 
 const MainSection = (): JSX.Element => {
-  const { updateCardInfos } = useSearchFormContext();
+  const dispatch = useAppDispatch();
   const [loader, setLoader] = useState(false);
 
   const [hasNext, setHasNext] = useState(true);
@@ -31,7 +31,7 @@ const MainSection = (): JSX.Element => {
     const page = 1;
     const result = await getSearchResult(apiBase.baseUrl, apiBase.path, searchTerm, page, value);
     setSearchParams({ page: `${page}` });
-    updateCardInfos(result.data);
+    dispatch(cardsPerPageUpdated(result.data));
     !result.meta.pagination.next ? setHasNext(false) : setHasNext(true);
     !result.meta.pagination.prev ? setHasPrev(false) : setHasPrev(true);
     setLoader(false);

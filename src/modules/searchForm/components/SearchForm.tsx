@@ -1,18 +1,16 @@
 import { FormEvent, useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
-import useSearchFormContext from '../../../contexts/searchFormContext/useSearchFormContext';
 import getSearchResult from '../../../api/helpers/getSearchResult';
 import apiBase from '../../../api/constants/apiBase';
 import getFullClassName from '../../../helpers/getFullClassName';
 import SearchInput from './SearchInput';
 import { SearchFormProps } from '../../../types';
 
-//--REDUX--
 import { useAppSelector, useAppDispatch } from '../../../app/hooks';
 import { searchTermUpdated } from '../../../helpers/reducers/searchTermSlice';
+import { cardsPerPageUpdated } from '../../../helpers/reducers/cardsPerPageSlice';
 
 const SearchForm = (props: SearchFormProps): JSX.Element => {
-  const { updateCardInfos } = useSearchFormContext();
   const searchTerm = useAppSelector((state) => state.searchTerm.value);
   const dispatch = useAppDispatch();
 
@@ -22,7 +20,7 @@ const SearchForm = (props: SearchFormProps): JSX.Element => {
 
   const setNewInfo = async (searchTerm: string, page?: number): Promise<void> => {
     const result = await getSearchResult(apiBase.baseUrl, apiBase.path, searchTerm, page, props.cardsPerPage);
-    updateCardInfos(result.data);
+    dispatch(cardsPerPageUpdated(result.data));
     if (props.setHasNextPage && props.setHasPrevPage) {
       !result.meta.pagination.next ? props.setHasNextPage(false) : props.setHasNextPage(true);
       !result.meta.pagination.prev ? props.setHasPrevPage(false) : props.setHasPrevPage(true);

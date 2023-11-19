@@ -1,12 +1,54 @@
 import { screen, render, waitFor, fireEvent } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { store } from '../app/store.ts';
-
+import configureStore from 'redux-mock-store';
 import SearchInput from '../modules/searchForm/components/SearchInput';
+
 jest.mock('../assets/search.svg', (): void => require('./__mock__/image-search'));
+const mockStore = configureStore([]);
 
 describe('SearchInput', () => {
   it('renders SearchInput component', () => {
+    const store = mockStore({
+      searchTerm: {
+        value: 'Mocked Search Term',
+      },
+      cardsPerPage: {
+        value: [
+          {
+            id: '1',
+            type: 'character',
+            attributes: {
+              alias_names: ['Harry'],
+              animagus: null,
+              blood_status: 'pure',
+              boggart: 'dementor',
+              born: '31 july',
+              died: null,
+              eye_color: 'green',
+              family_members: null,
+              marital_status: 'married',
+              gender: 'male',
+              hair_color: 'brown',
+              height: '6',
+              house: 'Grifindor',
+              image: null,
+              jobs: null,
+              name: 'Harry James Potter',
+              nationality: null,
+              patronus: 'dear',
+              romances: null,
+              skin_color: null,
+              slug: null,
+              species: 'Human',
+              titles: null,
+              wand: null,
+              weight: '170',
+              wiki: null,
+            },
+          },
+        ],
+      },
+    });
     render(
       <Provider store={store}>
         <SearchInput />
@@ -16,8 +58,47 @@ describe('SearchInput', () => {
   });
 
   it('calls updateSearchTerm when input value changes', async () => {
-    const dispatchSpy = jest.spyOn(store, 'dispatch');
-
+    const store = mockStore({
+      searchTerm: {
+        value: 'Mocked Search Term',
+      },
+      cardsPerPage: {
+        value: [
+          {
+            id: '1',
+            type: 'character',
+            attributes: {
+              alias_names: ['Harry'],
+              animagus: null,
+              blood_status: 'pure',
+              boggart: 'dementor',
+              born: '31 july',
+              died: null,
+              eye_color: 'green',
+              family_members: null,
+              marital_status: 'married',
+              gender: 'male',
+              hair_color: 'brown',
+              height: '6',
+              house: 'Grifindor',
+              image: null,
+              jobs: null,
+              name: 'Harry James Potter',
+              nationality: null,
+              patronus: 'dear',
+              romances: null,
+              skin_color: null,
+              slug: null,
+              species: 'Human',
+              titles: null,
+              wand: null,
+              weight: '170',
+              wiki: null,
+            },
+          },
+        ],
+      },
+    });
     render(
       <Provider store={store}>
         <SearchInput />
@@ -28,11 +109,12 @@ describe('SearchInput', () => {
         target: { value: 'testValue' },
       })
     );
-    expect(dispatchSpy).toHaveBeenCalledWith({
-      type: 'searchTerm/updated',
-      payload: 'testValue',
-    });
 
-    dispatchSpy.mockRestore();
+    expect(store.getActions()).toEqual([
+      {
+        type: 'searchTerm/updated',
+        payload: 'testValue',
+      },
+    ]);
   });
 });

@@ -1,11 +1,13 @@
-import useSearchFormContext from '../../../contexts/searchFormContext/useSearchFormContext';
+// import useSearchFormContext from '../../../contexts/searchFormContext/useSearchFormContext';
 import CharacterCard from '../../../components/characterCard/CharacterCard';
 import Loader from '../../../UI/loader/Loader';
 import { CharacterCardsProps } from '../../../types';
 import transformResponseToCardInfo from '../helpers/transformResponseToCardInfo';
+import { useAppSelector } from '../../../app/hooks';
 
 const CharacterCards = (props: CharacterCardsProps): JSX.Element => {
-  const { cardInfos } = useSearchFormContext();
+  // const { cardInfos } = useSearchFormContext();
+  const cardInfos = useAppSelector((state) => state.cardsPerPage.value);
 
   return (
     <section data-testid="character-cards-component" className="character-cards">

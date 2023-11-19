@@ -3,55 +3,15 @@ import userEvent from '@testing-library/user-event';
 import { createMemoryHistory } from 'history';
 import { MemoryRouter, Router } from 'react-router-dom';
 import Pagination from '../modules/pagination';
-import SearchFormContext from '../contexts/searchFormContext/SearchFormContext';
-import { SearchFormContextType } from '../types';
 import mockGetSearchResult from './__mock__/mockGetSearchResult';
 import { Provider } from 'react-redux';
-import { store } from '../app/store.ts';
+import configureStore from 'redux-mock-store';
 
 jest.mock('../api/helpers/getSearchResult', () => require('./__mock__/mockGetSearchResult'));
 
 jest.mock('../assets/left-double-arrow.svg', (): void => require('./__mock__/image-pagination'));
 
-const contextValue: SearchFormContextType = {
-  searchTerm: 'harry',
-  updateSearchTerm: jest.fn(),
-  cardInfos: [
-    {
-      id: '1',
-      type: 'character',
-      attributes: {
-        alias_names: ['Harry'],
-        animagus: null,
-        blood_status: 'pure',
-        boggart: 'dementor',
-        born: '31 july',
-        died: null,
-        eye_color: 'green',
-        family_members: null,
-        marital_status: 'married',
-        gender: 'male',
-        hair_color: 'brown',
-        height: '6',
-        house: 'Grifindor',
-        image: null,
-        jobs: null,
-        name: 'Harry James Potter',
-        nationality: null,
-        patronus: 'dear',
-        romances: null,
-        skin_color: null,
-        slug: null,
-        species: 'Human',
-        titles: null,
-        wand: null,
-        weight: '170',
-        wiki: null,
-      },
-    },
-  ],
-  updateCardInfos: jest.fn(),
-};
+const mockStore = configureStore([]);
 
 describe('Pagination', () => {
   it('renders Pagination component', async () => {
@@ -66,12 +26,51 @@ describe('Pagination', () => {
         props.hasPrev = value;
       },
     };
+    const store = mockStore({
+      searchTerm: {
+        value: 'Mocked Search Term',
+      },
+      cardsPerPage: {
+        value: [
+          {
+            id: '1',
+            type: 'character',
+            attributes: {
+              alias_names: ['Harry'],
+              animagus: null,
+              blood_status: 'pure',
+              boggart: 'dementor',
+              born: '31 july',
+              died: null,
+              eye_color: 'green',
+              family_members: null,
+              marital_status: 'married',
+              gender: 'male',
+              hair_color: 'brown',
+              height: '6',
+              house: 'Grifindor',
+              image: null,
+              jobs: null,
+              name: 'Harry James Potter',
+              nationality: null,
+              patronus: 'dear',
+              romances: null,
+              skin_color: null,
+              slug: null,
+              species: 'Human',
+              titles: null,
+              wand: null,
+              weight: '170',
+              wiki: null,
+            },
+          },
+        ],
+      },
+    });
     render(
       <MemoryRouter initialEntries={['/']}>
         <Provider store={store}>
-          <SearchFormContext.Provider value={contextValue}>
-            <Pagination {...props} />
-          </SearchFormContext.Provider>
+          <Pagination {...props} />
         </Provider>
       </MemoryRouter>
     );
@@ -81,7 +80,47 @@ describe('Pagination', () => {
 
   it('updates URL query parameter', async () => {
     const history = createMemoryHistory({ initialEntries: ['/?page=2'] });
-
+    const store = mockStore({
+      searchTerm: {
+        value: 'Mocked Search Term',
+      },
+      cardsPerPage: {
+        value: [
+          {
+            id: '1',
+            type: 'character',
+            attributes: {
+              alias_names: ['Harry'],
+              animagus: null,
+              blood_status: 'pure',
+              boggart: 'dementor',
+              born: '31 july',
+              died: null,
+              eye_color: 'green',
+              family_members: null,
+              marital_status: 'married',
+              gender: 'male',
+              hair_color: 'brown',
+              height: '6',
+              house: 'Grifindor',
+              image: null,
+              jobs: null,
+              name: 'Harry James Potter',
+              nationality: null,
+              patronus: 'dear',
+              romances: null,
+              skin_color: null,
+              slug: null,
+              species: 'Human',
+              titles: null,
+              wand: null,
+              weight: '170',
+              wiki: null,
+            },
+          },
+        ],
+      },
+    });
     const props = {
       hasNext: true,
       hasPrev: true,
@@ -92,9 +131,7 @@ describe('Pagination', () => {
     render(
       <Router location={history.location} navigator={history}>
         <Provider store={store}>
-          <SearchFormContext.Provider value={contextValue}>
-            <Pagination {...props} />
-          </SearchFormContext.Provider>
+          <Pagination {...props} />
         </Provider>
       </Router>
     );
@@ -161,6 +198,47 @@ describe('Pagination', () => {
         },
       },
     }));
+    const store = mockStore({
+      searchTerm: {
+        value: 'Mocked Search Term',
+      },
+      cardsPerPage: {
+        value: [
+          {
+            id: '1',
+            type: 'character',
+            attributes: {
+              alias_names: ['Harry'],
+              animagus: null,
+              blood_status: 'pure',
+              boggart: 'dementor',
+              born: '31 july',
+              died: null,
+              eye_color: 'green',
+              family_members: null,
+              marital_status: 'married',
+              gender: 'male',
+              hair_color: 'brown',
+              height: '6',
+              house: 'Grifindor',
+              image: null,
+              jobs: null,
+              name: 'Harry James Potter',
+              nationality: null,
+              patronus: 'dear',
+              romances: null,
+              skin_color: null,
+              slug: null,
+              species: 'Human',
+              titles: null,
+              wand: null,
+              weight: '170',
+              wiki: null,
+            },
+          },
+        ],
+      },
+    });
     const props = {
       hasNext: true,
       hasPrev: true,
@@ -173,9 +251,7 @@ describe('Pagination', () => {
     render(
       <Router location={history.location} navigator={history}>
         <Provider store={store}>
-          <SearchFormContext.Provider value={contextValue}>
-            <Pagination {...props} />
-          </SearchFormContext.Provider>
+          <Pagination {...props} />
         </Provider>
       </Router>
     );
