@@ -1,19 +1,19 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { CardInfoResponse } from '../../types';
+import limitsPerPage from '../../api/constants/limitsPerPage';
 
 interface CardsPerPageState {
-  value: CardInfoResponse[];
+  value: number;
 }
 
 const initialState: CardsPerPageState = {
-  value: [],
+  value: limitsPerPage.opt1,
 };
 
 const cardsPerPageSlice = createSlice({
-  name: 'cards',
+  name: 'cardsPerPage',
   initialState,
   reducers: {
-    updated(state, action: PayloadAction<CardInfoResponse[]>) {
+    updated(state, action: PayloadAction<number>) {
       state.value = action.payload;
     },
   },

@@ -1,18 +1,13 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { SearchInputProps } from '../../../types';
 import searchIcon from '../../../assets/search.svg';
 
-//--REDUX--
-import { useAppDispatch, useAppSelector } from '../../../app/hooks';
-import { searchTermUpdated } from '../../../helpers/reducers/searchTermSlice';
-
 const SearchInput = (props: SearchInputProps): JSX.Element => {
-  const searchTerm = useAppSelector((state) => state.searchTerm.value);
-  const dispatch = useAppDispatch();
+  const [searchTerm, setSearchTerm] = useState(props.value || '');
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
     event.preventDefault();
-    dispatch(searchTermUpdated(event.target.value));
+    props.setValue ? props.setValue(event.target.value) : setSearchTerm(event.target.value);
   };
 
   return (
@@ -23,7 +18,7 @@ const SearchInput = (props: SearchInputProps): JSX.Element => {
         type="text"
         className="search-form__text-field"
         placeholder={props.inputPlaceholder || 'Enter'}
-        value={searchTerm}
+        value={props.value !== undefined ? props.value : searchTerm}
         onChange={handleInputChange}
       />
     </div>

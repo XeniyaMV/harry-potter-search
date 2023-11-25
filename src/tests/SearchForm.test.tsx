@@ -1,64 +1,37 @@
-import { screen, render, waitFor, fireEvent } from '@testing-library/react';
-import SearchForm from '../modules/searchForm';
+import { screen, waitFor, fireEvent } from '@testing-library/react';
+
+import { renderWithProviders } from './utils/test-utils';
+import apiBase from '../api/constants/apiBase';
+
 import { MemoryRouter } from 'react-router-dom';
 
-import { Provider } from 'react-redux';
-import configureStore from 'redux-mock-store';
+import { http, HttpResponse, delay } from 'msw';
+import { setupServer } from 'msw/node';
 
-jest.mock('../api/helpers/getSearchResult', () => require('./__mock__/mockGetSearchResult'));
+import SearchForm from '../modules/searchForm';
 
 jest.mock('../assets/search.svg', (): void => require('./__mock__/image-search'));
 
-const mockStore = configureStore([]);
+const handlers = [
+  http.get(`${apiBase.baseUrl}${apiBase.path}`, async () => {
+    await delay(150);
+    return HttpResponse.json();
+  }),
+];
+
+const server = setupServer(...handlers);
+
+beforeAll(() => server.listen());
+
+afterEach(() => server.resetHandlers());
+
+afterAll(() => server.close());
 
 describe('SearchForm', () => {
   it('renders SearchForm component', async () => {
-    const store = mockStore({
-      searchTerm: {
-        value: 'Mocked Search Term',
-      },
-      cardsPerPage: {
-        value: [
-          {
-            id: '1',
-            type: 'character',
-            attributes: {
-              alias_names: ['Harry'],
-              animagus: null,
-              blood_status: 'pure',
-              boggart: 'dementor',
-              born: '31 july',
-              died: null,
-              eye_color: 'green',
-              family_members: null,
-              marital_status: 'married',
-              gender: 'male',
-              hair_color: 'brown',
-              height: '6',
-              house: 'Grifindor',
-              image: null,
-              jobs: null,
-              name: 'Harry James Potter',
-              nationality: null,
-              patronus: 'dear',
-              romances: null,
-              skin_color: null,
-              slug: null,
-              species: 'Human',
-              titles: null,
-              wand: null,
-              weight: '170',
-              wiki: null,
-            },
-          },
-        ],
-      },
-    });
-    render(
+    renderWithProviders(
       <MemoryRouter initialEntries={['/']}>
-        <Provider store={store}>
-          <SearchForm submitTitle="search" />
-        </Provider>
+        <SearchForm submitTitle="search" />
       </MemoryRouter>
     );
     const searchFormElement = await screen.findByTestId('search-form-component');
@@ -68,115 +41,31 @@ describe('SearchForm', () => {
 
   it('saves entered value to local storage when clicking the Search button', async () => {
     const localStorageSetItemMock = jest.spyOn(Storage.prototype, 'setItem');
-    const setLoader = jest.fn();
 
-    const store = mockStore({
-      searchTerm: {
-        value: 'Mocked Search Term',
-      },
-      cardsPerPage: {
-        value: [
-          {
-            id: '1',
-            type: 'character',
-            attributes: {
-              alias_names: ['Harry'],
-              animagus: null,
-              blood_status: 'pure',
-              boggart: 'dementor',
-              born: '31 july',
-              died: null,
-              eye_color: 'green',
-              family_members: null,
-              marital_status: 'married',
-              gender: 'male',
-              hair_color: 'brown',
-              height: '6',
-              house: 'Grifindor',
-              image: null,
-              jobs: null,
-              name: 'Harry James Potter',
-              nationality: null,
-              patronus: 'dear',
-              romances: null,
-              skin_color: null,
-              slug: null,
-              species: 'Human',
-              titles: null,
-              wand: null,
-              weight: '170',
-              wiki: null,
-            },
-          },
-        ],
-      },
-    });
-
-    render(
+    renderWithProviders(
       <MemoryRouter initialEntries={['/']}>
-        <Provider store={store}>
-          <SearchForm submitTitle="search" setLoader={setLoader} />
-        </Provider>
+        <SearchForm submitTitle="search" />
       </MemoryRouter>
     );
 
     const searchFormElement = await screen.findByTestId('search-form-component');
+    await waitFor(() =>
+      fireEvent.change(screen.getByTestId('input-text'), {
+        target: { value: 'testValue' },
+      })
+    );
 
     await waitFor(() => fireEvent.submit(searchFormElement));
 
-    expect(setLoader).toHaveBeenCalledTimes(4);
-    expect(localStorageSetItemMock).toHaveBeenCalledWith('searchTerm', 'Mocked Search Term');
+    expect(localStorageSetItemMock).toHaveBeenCalledWith('searchTerm', 'testValue');
   });
 
   it('retrieves the value from local storage upon mounting', async () => {
     const localStorageGetItemMock = jest.spyOn(Storage.prototype, 'getItem');
 
-    const store = mockStore({
-      searchTerm: {
-        value: 'Mocked Search Term',
-      },
-      cardsPerPage: {
-        value: [
-          {
-            id: '1',
-            type: 'character',
-            attributes: {
-              alias_names: ['Harry'],
-              animagus: null,
-              blood_status: 'pure',
-              boggart: 'dementor',
-              born: '31 july',
-              died: null,
-              eye_color: 'green',
-              family_members: null,
-              marital_status: 'married',
-              gender: 'male',
-              hair_color: 'brown',
-              height: '6',
-              house: 'Grifindor',
-              image: null,
-              jobs: null,
-              name: 'Harry James Potter',
-              nationality: null,
-              patronus: 'dear',
-              romances: null,
-              skin_color: null,
-              slug: null,
-              species: 'Human',
-              titles: null,
-              wand: null,
-              weight: '170',
-              wiki: null,
-            },
-          },
-        ],
-      },
-    });
-    render(
+    renderWithProviders(
       <MemoryRouter initialEntries={['/']}>
-        <Provider store={store}>
-          <SearchForm submitTitle="search" />
-        </Provider>
+        <SearchForm submitTitle="search" />
       </MemoryRouter>
     );
 
