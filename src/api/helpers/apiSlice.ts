@@ -1,13 +1,18 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import apiBase from '../constants/apiBase';
 import limitsPerPage from '../constants/limitsPerPage';
-import { SearchResponse } from '../../types';
+import { CharacterResponse, SearchResponse } from '../../types';
 
 interface SearchQueryType {
   path: string;
   search: string;
   page: number;
   limit?: string | number;
+}
+
+interface CharacterSearchQueryType {
+  path: string;
+  id: string;
 }
 
 export const apiSlice = createApi({
@@ -19,7 +24,10 @@ export const apiSlice = createApi({
         return `${path}?filter[name_cont]=${search}&page[size]=${limit}&page[number]=${page || '1'}`;
       },
     }),
+    getCharacterResult: builder.query<CharacterResponse, CharacterSearchQueryType>({
+      query: ({ path, id }) => `${path}${id}`,
+    }),
   }),
 });
 
-export const { useGetSearchResultQuery } = apiSlice;
+export const { useGetSearchResultQuery, useGetCharacterResultQuery } = apiSlice;

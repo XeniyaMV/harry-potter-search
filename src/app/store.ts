@@ -2,7 +2,8 @@ import { configureStore } from '@reduxjs/toolkit';
 import searchTermSlice from '../helpers/reducers/searchTermSlice';
 import cardsPerPageSlice from '../helpers/reducers/cardsPerPageSlice';
 import currentPageSlice from '../helpers/reducers/currentPageSlice';
-import pageInfoSlaice from '../helpers/reducers/pageInfoSlice';
+import pageInfoSlice from '../helpers/reducers/pageInfoSlice';
+import detailsSlice from '../helpers/reducers/detailsSlice';
 import { apiSlice } from '../api/helpers/apiSlice';
 
 export const store = configureStore({
@@ -10,7 +11,8 @@ export const store = configureStore({
     searchTerm: searchTermSlice,
     cardsPerPage: cardsPerPageSlice,
     page: currentPageSlice,
-    pageInfo: pageInfoSlaice,
+    pageInfo: pageInfoSlice,
+    details: detailsSlice,
     [apiSlice.reducerPath]: apiSlice.reducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware),

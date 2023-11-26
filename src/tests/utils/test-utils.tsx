@@ -10,6 +10,7 @@ import cardsPerPageSlice from '../../helpers/reducers/cardsPerPageSlice';
 import currentPageSlice from '../../helpers/reducers/currentPageSlice';
 import pageInfoSlaice from '../../helpers/reducers/pageInfoSlice';
 import searchTermSlice from '../../helpers/reducers/searchTermSlice';
+import detailsSlice from '../../helpers/reducers/detailsSlice';
 import { apiSlice } from '../../api/helpers/apiSlice';
 
 interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
@@ -42,6 +43,12 @@ export function renderWithProviders(
           hasPrevPage: false,
         },
       },
+      details: {
+        value: {
+          id: '',
+          isOpen: false,
+        },
+      },
       [apiSlice.reducerPath]: {
         queries: {},
         mutations: {},
@@ -65,6 +72,7 @@ export function renderWithProviders(
         cardsPerPage: cardsPerPageSlice,
         page: currentPageSlice,
         pageInfo: pageInfoSlaice,
+        details: detailsSlice,
         [apiSlice.reducerPath]: apiSlice.reducer,
       },
       middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware),

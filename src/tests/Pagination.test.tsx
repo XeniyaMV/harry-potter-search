@@ -95,7 +95,7 @@ describe('Pagination', () => {
   });
 
   it('updates URL query parameter', async () => {
-    const history = createMemoryHistory({ initialEntries: ['/?page=2'] });
+    const history = createMemoryHistory({ initialEntries: ['/?page=2&details=1'] });
     const initialStore = {
       searchTerm: {
         value: 'Mocked Search Term',
@@ -111,6 +111,12 @@ describe('Pagination', () => {
       },
       cardsPerPage: {
         value: 10,
+      },
+      details: {
+        value: {
+          id: '',
+          isOpen: false,
+        },
       },
       api: {
         queries: {},
@@ -139,11 +145,11 @@ describe('Pagination', () => {
     );
     const paginationPrev = await screen.findByTestId('pagination-prev');
     await userEvent.click(paginationPrev);
-    expect(history.location.search).toBe('?page=1');
+    expect(history.location.search).toBe('?page=1&details=1');
 
     const paginationNext = await screen.findByTestId('pagination-next');
     await userEvent.click(paginationNext);
-    expect(history.location.search).toBe('?page=2');
+    expect(history.location.search).toBe('?page=2&details=1');
   });
 
   it('handles click events', async () => {
@@ -163,6 +169,12 @@ describe('Pagination', () => {
       },
       cardsPerPage: {
         value: 10,
+      },
+      details: {
+        value: {
+          id: '',
+          isOpen: false,
+        },
       },
       api: {
         queries: {},

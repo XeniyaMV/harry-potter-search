@@ -1,17 +1,28 @@
+import { memo } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { CharacterCardProps } from '../../types';
 import getFullClassName from '../../helpers/getFullClassName';
 import cardImg from '../../assets/card-picture.jpg';
+import { useAppDispatch } from '../../app/hooks';
+import { detailsIdUpdated, detailsIsOpenUpdated } from '../../helpers/reducers/detailsSlice';
 
-const CharacterCard = (props: CharacterCardProps): JSX.Element => {
+const CharacterCard = memo((props: CharacterCardProps): JSX.Element => {
   const fullClassName = getFullClassName('character-card', props.additionalClassName);
   const [searchParams] = useSearchParams();
+  const dispatch = useAppDispatch();
 
   return (
     <Link
       data-testid="character-card"
       className={fullClassName}
-      to={`/details/?page=${searchParams.get('page') ? searchParams.get('page') : 1}&details=${props.cardInfo.id}`}
+      to={{
+        pathname: `/details/`,
+        search: `?page=${searchParams.get('page') ? searchParams.get('page') : 1}&details=${props.cardInfo.id}`,
+      }}
+      onClick={(): void => {
+        dispatch(detailsIdUpdated(props.cardInfo.id || ''));
+        dispatch(detailsIsOpenUpdated(true));
+      }}
     >
       <ul data-testid="card-info-list" className="list character-card__info">
         {Object.entries(props.cardInfo).map(
@@ -29,6 +40,6 @@ const CharacterCard = (props: CharacterCardProps): JSX.Element => {
       <img data-testid="card-image" className="character-card__image" src={cardImg} alt="card image" />
     </Link>
   );
-};
+});
 
 export default CharacterCard;

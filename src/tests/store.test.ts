@@ -2,6 +2,8 @@ import { pageUpdated } from '../helpers/reducers/currentPageSlice';
 import { cardsPerPageUpdated } from '../helpers/reducers/cardsPerPageSlice';
 import { searchTermUpdated } from '../helpers/reducers/searchTermSlice';
 import { pageInfoUpdated } from '../helpers/reducers/pageInfoSlice';
+import { detailsIdUpdated } from '../helpers/reducers/detailsSlice';
+import { detailsIsOpenUpdated } from '../helpers/reducers/detailsSlice';
 
 import { store } from '../app/store';
 import limitsPerPage from '../api/constants/limitsPerPage';
@@ -37,6 +39,16 @@ describe('Redux Store', () => {
     expect(store.getState().page).toEqual({
       value: 2,
     });
+  });
+
+  it('dispatch action to update details id', () => {
+    store.dispatch(detailsIdUpdated('id'));
+    expect(store.getState().details.value.id).toBe('id');
+  });
+
+  it('dispatch action to update is details open', () => {
+    store.dispatch(detailsIsOpenUpdated(true));
+    expect(store.getState().details.value.isOpen).toBe(true);
   });
 
   it('dispatch action to update pageInfo', () => {

@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 const Pagination = (props: PaginationProps): JSX.Element => {
   const page = useAppSelector((state) => state.page.value);
   const pageInfo = useAppSelector((state) => state.pageInfo.value);
-  const [, setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const dispatch = useAppDispatch();
 
@@ -25,8 +25,13 @@ const Pagination = (props: PaginationProps): JSX.Element => {
   };
 
   useEffect(() => {
-    setSearchParams({ page: `${page}` });
-  }, [page, setSearchParams]);
+    const details = searchParams.get('details');
+    if (details) {
+      setSearchParams({ page: `${page}`, details: `${details}` });
+    } else {
+      setSearchParams({ page: `${page}` });
+    }
+  }, [page, searchParams, setSearchParams]);
 
   return (
     <div data-testid="pagination-component" className={fullClassName}>
