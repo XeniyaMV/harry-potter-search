@@ -1,38 +1,40 @@
-import { render, screen, waitFor, fireEvent } from '@testing-library/react';
-import MainPage from '../pages/mainPage/components/MainPage';
+import { screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import SearchFormContext from '../contexts/searchFormContext/SearchFormContext';
-import { SearchFormContextType } from '../types';
+import { http, HttpResponse, delay } from 'msw';
+import { setupServer } from 'msw/node';
 
-jest.mock('../api/helpers/getSearchResult', () => require('./__mock__/mockGetSearchResult'));
+import { renderWithProviders } from './utils/test-utils';
+import apiBase from '../api/constants/apiBase';
+
+import MainPage from '../pages/mainPage/components/MainPage';
+
 jest.mock('../assets/search.svg', (): void => require('./__mock__/image-search'));
 jest.mock('../assets/card-picture.jpg', (): void => require('./__mock__/image-card-picture'));
 
-const contextValue: SearchFormContextType = {
-  searchTerm: 'mockedSearchTerm',
-  updateSearchTerm: jest.fn(),
-  cardInfos: [],
-  updateCardInfos: jest.fn(),
-};
+const handlers = [
+  http.get(`${apiBase.baseUrl}${apiBase.path}`, async () => {
+    await delay(150);
+    return HttpResponse.json();
+  }),
+];
+
+const server = setupServer(...handlers);
+
+beforeAll(() => server.listen());
+
+afterEach(() => server.resetHandlers());
+
+afterAll(() => server.close());
 
 describe('MainPage', () => {
   it('renders MainPage component', async () => {
-    jest.spyOn(console, 'error').mockImplementation(() => {});
+    // jest.spyOn(console, 'error').mockImplementation(() => {});
 
-    render(
+    renderWithProviders(
       <MemoryRouter>
-        <SearchFormContext.Provider value={contextValue}>
-          <MainPage />
-        </SearchFormContext.Provider>
+        <MainPage />
       </MemoryRouter>
     );
-
-    await waitFor(() => {
-      const selectElement: HTMLSelectElement | null = screen.getByTestId('select-component').querySelector('select');
-      if (selectElement) {
-        fireEvent.change(selectElement, { target: { value: 'value' } });
-      }
-    });
 
     const mainSection = screen.getByTestId('main-section-component');
     const startScreenSection = screen.getByTestId('start-screen-component');

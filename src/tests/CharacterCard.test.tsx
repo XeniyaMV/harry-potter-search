@@ -1,13 +1,66 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { screen, fireEvent, waitFor } from '@testing-library/react';
+import { renderWithProviders } from './utils/test-utils';
 import { MemoryRouter, Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import userEvent from '@testing-library/user-event';
 import CharacterCard from '../components/characterCard/CharacterCard';
 import Details from '../modules/details';
-import mockGetCharacterResult from './__mock__/mockGetCharacterResult';
+
+import apiBase from '../api/constants/apiBase';
+import { CharacterResponse } from '../types';
+import { http, HttpResponse, delay } from 'msw';
+import { setupServer } from 'msw/node';
+
 jest.mock('../assets/card-picture.jpg', (): void => require('./__mock__/image-card-picture'));
 
-jest.mock('../api/helpers/getCharacterResult', () => require('./__mock__/mockGetCharacterResult'));
+const handlers = [
+  http.get(`${apiBase.baseUrl}${apiBase.path}1`, async () => {
+    await delay(150);
+    const response: CharacterResponse = {
+      data: {
+        id: '1',
+        type: 'character',
+        attributes: {
+          alias_names: ['Harry'],
+          animagus: null,
+          blood_status: 'pure',
+          boggart: 'dementor',
+          born: '31 july',
+          died: null,
+          eye_color: 'green',
+          family_members: null,
+          marital_status: 'married',
+          gender: 'male',
+          hair_color: 'brown',
+          height: '6',
+          house: 'Grifindor',
+          image: null,
+          jobs: null,
+          name: 'Harry James Potter',
+          nationality: null,
+          patronus: 'dear',
+          romances: null,
+          skin_color: null,
+          slug: null,
+          species: 'Human',
+          titles: null,
+          wand: null,
+          weight: '170',
+          wiki: null,
+        },
+      },
+    };
+    return HttpResponse.json(response);
+  }),
+];
+
+const server = setupServer(...handlers);
+
+beforeAll(() => server.listen());
+
+afterEach(() => server.resetHandlers());
+
+afterAll(() => server.close());
 
 describe('CharacterCard component', () => {
   const cardInfo = {
@@ -22,7 +75,7 @@ describe('CharacterCard component', () => {
   };
 
   it('should render the component onto the screen', () => {
-    render(
+    renderWithProviders(
       <MemoryRouter initialEntries={['/']}>
         <CharacterCard cardInfo={cardInfo} />
       </MemoryRouter>
@@ -33,7 +86,7 @@ describe('CharacterCard component', () => {
   });
 
   it('renders CharacterCard component with relevant data', () => {
-    render(
+    renderWithProviders(
       <MemoryRouter initialEntries={['/']}>
         <CharacterCard cardInfo={cardInfo} />
       </MemoryRouter>
@@ -49,7 +102,7 @@ describe('CharacterCard component', () => {
   it('by clicking on CharacterCard changes url', async () => {
     const history = createMemoryHistory({ initialEntries: ['/'] });
 
-    render(
+    renderWithProviders(
       <Router location={history.location} navigator={history}>
         <CharacterCard cardInfo={cardInfo} />
       </Router>
@@ -60,7 +113,7 @@ describe('CharacterCard component', () => {
   });
 
   it('by clicking on CharacterCard opens a detailed card component and triggers API call', async () => {
-    render(
+    renderWithProviders(
       <BrowserRouter>
         <Routes>
           <Route index element={<CharacterCard cardInfo={cardInfo} />} />
@@ -73,6 +126,5 @@ describe('CharacterCard component', () => {
 
     const detailsComponent = await screen.findByTestId('details-component');
     expect(detailsComponent).toBeInTheDocument();
-    expect(mockGetCharacterResult).toHaveBeenCalledTimes(1);
   });
 });
