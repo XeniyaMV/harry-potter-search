@@ -1,57 +1,38 @@
-import { FormEvent, useEffect } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
-import useSearchFormContext from '../../../contexts/searchFormContext/useSearchFormContext';
-import getSearchResult from '../../../api/helpers/getSearchResult';
-import apiBase from '../../../api/constants/apiBase';
+import { FormEvent, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import getFullClassName from '../../../helpers/getFullClassName';
 import SearchInput from './SearchInput';
 import { SearchFormProps } from '../../../types';
 
-const SearchForm = (props: SearchFormProps): JSX.Element => {
-  const { searchTerm, updateSearchTerm, updateCardInfos } = useSearchFormContext();
-  const [searchParams, setSearchParams] = useSearchParams();
-  const fullClassName = getFullClassName('search-form', props.additionalClassName);
-  const navigate = useNavigate();
+import { useAppSelector, useAppDispatch } from '../../../app/hooks';
+import { searchTermUpdated } from '../../../helpers/reducers/searchTermSlice';
+import { pageUpdated } from '../../../helpers/reducers/currentPageSlice';
 
-  const setNewInfo = async (searchTerm: string, page?: number): Promise<void> => {
-    const result = await getSearchResult(apiBase.baseUrl, apiBase.path, searchTerm, page, props.cardsPerPage);
-    updateCardInfos(result.data);
-    if (props.setHasNextPage && props.setHasPrevPage) {
-      !result.meta.pagination.next ? props.setHasNextPage(false) : props.setHasNextPage(true);
-      !result.meta.pagination.prev ? props.setHasPrevPage(false) : props.setHasPrevPage(true);
-    }
-  };
+const SearchForm = (props: SearchFormProps): JSX.Element => {
+  const searchTerm = useAppSelector((state) => state.searchTerm.value);
+
+  const dispatch = useAppDispatch();
+
+  const [inputValue, setInputValue] = useState(searchTerm);
+
+  const navigate = useNavigate();
+  const fullClassName = getFullClassName('search-form', props.additionalClassName);
 
   useEffect((): void => {
-    const fetchData = async (): Promise<void> => {
-      if (!props.loader) {
-        if (props.setLoader) props.setLoader(true);
-
-        const pageQuaryParam = searchParams.get('page');
-        const search = localStorage.getItem('searchTerm') || '';
-        await setNewInfo(search, pageQuaryParam ? +pageQuaryParam : 1);
-        updateSearchTerm(search);
-        if (props.setLoader) props.setLoader(false);
-      }
-    };
-    fetchData();
+    const search = localStorage.getItem('searchTerm') || '';
+    setInputValue(search);
+    dispatch(searchTermUpdated(search));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>): Promise<void> => {
     event.preventDefault();
-    if (!props.loader) {
-      if (props.setLoader) props.setLoader(true);
 
-      navigate('/?page=1');
-      setSearchParams({ page: '1' });
-      const search = searchTerm.trim();
-      updateSearchTerm(search);
-      await setNewInfo(search);
-      localStorage.setItem('searchTerm', search);
-
-      if (props.setLoader) props.setLoader(false);
-    }
+    navigate('/?page=1');
+    const search = inputValue.trim();
+    dispatch(searchTermUpdated(search));
+    dispatch(pageUpdated(1));
+    localStorage.setItem('searchTerm', search);
   };
 
   return (
@@ -60,12 +41,8 @@ const SearchForm = (props: SearchFormProps): JSX.Element => {
       className={fullClassName}
       onSubmit={(event): Promise<void> => handleSubmit(event)}
     >
-      <SearchInput inputPlaceholder={props.inputPlaceholder} />
-      <button
-        className={`button search-form__submit ${props.loader ? 'button_disabled' : ''}`}
-        type="submit"
-        disabled={props.loader}
-      >
+      <SearchInput value={inputValue} setValue={setInputValue} inputPlaceholder={props.inputPlaceholder} />
+      <button className={`button search-form__submit`} type="submit">
         {props.submitTitle}
       </button>
     </form>
