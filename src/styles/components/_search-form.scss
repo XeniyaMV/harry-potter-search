@@ -1,0 +1,31 @@
+.search-form {
+  display: flex;
+  justify-content: center;
+  column-gap: 0.3rem;
+
+  &__input {
+    padding: 0.7rem;
+    width: 90%;
+    display: flex;
+    background-color: $color-accent-secondary-l;
+    border: 0.05rem solid $color-accent-secondary-m;
+    border-radius: 0.4rem;
+  }
+
+  &__text-field {
+    width: 100%;
+    margin-left: 0.4rem;
+    color: $color-accent-primary;
+    background-color: $color-accent-secondary-l;
+    border: 0px;
+    font-size: 1rem;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      outline: none;
+    }
+  }
+}

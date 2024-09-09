@@ -1,0 +1,14 @@
+.header {
+  background-color: $color-primary-dark;
+
+  &__wrapper {
+    padding: 1rem 0.5rem;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    width: 6.5rem;
+  }
+}

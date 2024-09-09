@@ -1,0 +1,25 @@
+.logo {
+  padding: 0.5rem;
+  width: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  column-gap: 0.5rem;
+  text-decoration: none;
+
+  &__title {
+    font-size: 1rem;
+    text-align: center;
+
+    color: $color-primary-dark;
+  }
+
+  &__icon {
+    width: 100%;
+  }
+
+  &:hover {
+    color: $color-primary-dark;
+    text-decoration: none;
+  }
+}
